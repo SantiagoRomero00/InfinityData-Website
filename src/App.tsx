@@ -47,6 +47,7 @@ function App() {
         <div className="min-h-screen">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            {/* ServiceDemo route temporarily disabled - keeping code for potential future use
             <Route
               path="/service-demo"
               element={
@@ -55,6 +56,7 @@ function App() {
                 </Suspense>
               }
             />
+            */}
             <Route
               path="/demo"
               element={

@@ -27,12 +27,9 @@ const ServicesGrid = () => {
                 Reduci el tiempo de ejecución de tareas con tan solo un click
               </p>
 
-              <div className="flex flex-col gap-4 mb-8">
-                <a href="/demo?service=Automatización de procesos" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800">
+              <div className="mb-8">
+                <a href="/demo?service=Automatización de procesos" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
                   Contratar Servicio
-                </a>
-                <a href="/service-demo?service=automatizacion-procesos" className="bg-white hover:bg-emerald-50 text-emerald-700 px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 text-center border border-emerald-300 hover:border-emerald-400">
-                  Ver Demo
                 </a>
               </div>
             </div>
@@ -65,12 +62,9 @@ const ServicesGrid = () => {
                 Brinda atención a tus usuarios 24/7 con nuestro asistente virtual
               </p>
 
-              <div className="flex flex-col gap-4 mb-8">
-                <a href="/demo?service=Soporte al cliente" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800">
+              <div className="mb-8">
+                <a href="/demo?service=Soporte al cliente" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
                   Contratar Servicio
-                </a>
-                <a href="/service-demo?service=soporte-cliente" className="bg-white hover:bg-emerald-50 text-emerald-700 px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 text-center border border-emerald-300 hover:border-emerald-400">
-                  Ver Demo
                 </a>
               </div>
             </div>
@@ -106,12 +100,9 @@ const ServicesGrid = () => {
                 Convierte leads en reuniones automáticamente
               </p>
 
-              <div className="flex flex-col gap-4 mb-8">
-                <a href="/demo?service=Planificador de llamadas" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800">
+              <div className="mb-8">
+                <a href="/demo?service=Planificador de llamadas" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
                   Contratar Servicio
-                </a>
-                <a href="/service-demo?service=planificador-llamadas" className="bg-white hover:bg-emerald-50 text-emerald-700 px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 text-center border border-emerald-300 hover:border-emerald-400">
-                  Ver Demo
                 </a>
               </div>
             </div>
@@ -147,12 +138,9 @@ const ServicesGrid = () => {
                 Integra y gestiona clientes sin complicaciones
               </p>
 
-              <div className="flex flex-col gap-4 mb-8">
-                <a href="/demo?service=Integración de clientes" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800">
+              <div className="mb-8">
+                <a href="/demo?service=Integración de clientes" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
                   Contratar Servicio
-                </a>
-                <a href="/service-demo?service=integracion-clientes" className="bg-white hover:bg-emerald-50 text-emerald-700 px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 text-center border border-emerald-300 hover:border-emerald-400">
-                  Ver Demo
                 </a>
               </div>
             </div>
