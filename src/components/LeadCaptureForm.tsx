@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowRight, Shield, CheckCircle, AlertCircle, Loader2, Infinity, ArrowLeft } from 'lucide-react';
 import { submitLeadForm, validateFormData } from '../utils/formSubmission';
 
@@ -21,11 +21,15 @@ interface FormErrors {
 }
 
 const LeadCaptureForm = () => {
+  console.log('✅ LeadCaptureForm component mounting...');
+
   const navigate = useNavigate();
-  
-  // Get service from URL parameters
-  const urlParams = new URLSearchParams(window.location.search);
-  const preselectedService = urlParams.get('service') || '';
+  const [searchParams] = useSearchParams();
+
+  // Get service from URL parameters using React Router hook
+  const preselectedService = searchParams.get('service') || '';
+
+  console.log('📋 Preselected service:', preselectedService);
 
   const [formData, setFormData] = useState<FormData>({
     name: '',

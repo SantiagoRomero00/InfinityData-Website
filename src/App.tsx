@@ -7,6 +7,7 @@ import HowItWorks from './components/HowItWorks';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import VoiceflowWidget from './components/VoiceflowWidget';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy load the form component for better performance
 const LeadCaptureForm = lazy(() => import('./components/LeadCaptureForm'));
@@ -14,14 +15,17 @@ const SuccessScreen = lazy(() => import('./components/SuccessScreen'));
 const ServiceDemo = lazy(() => import('./components/ServiceDemo'));
 
 // Loading component
-const LoadingSpinner = () => (
-  <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-    <div className="text-center">
-      <div className="w-16 h-16 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin mx-auto mb-4"></div>
-      <p className="text-gray-600 text-lg">Cargando...</p>
+const LoadingSpinner = () => {
+  console.log('⏳ LoadingSpinner showing...');
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-16 h-16 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-gray-600 text-lg">Cargando...</p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const HomePage = () => (
   <>
@@ -35,39 +39,43 @@ const HomePage = () => (
 );
 
 function App() {
+  console.log('🚀 App component rendering...');
+
   return (
     <Router>
-      <div className="min-h-screen">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route
-            path="/service-demo"
-            element={
-              <Suspense fallback={<LoadingSpinner />}>
-                <ServiceDemo />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/demo"
-            element={
-              <Suspense fallback={<LoadingSpinner />}>
-                <LeadCaptureForm />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/success"
-            element={
-              <Suspense fallback={<LoadingSpinner />}>
-                <SuccessScreen />
-              </Suspense>
-            }
-          />
-        </Routes>
-        {/* Voiceflow Widget - Available on all pages */}
-        <VoiceflowWidget />
-      </div>
+      <ErrorBoundary>
+        <div className="min-h-screen">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/service-demo"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <ServiceDemo />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/demo"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <LeadCaptureForm />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/success"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <SuccessScreen />
+                </Suspense>
+              }
+            />
+          </Routes>
+          {/* Voiceflow Widget - Available on all pages */}
+          <VoiceflowWidget />
+        </div>
+      </ErrorBoundary>
     </Router>
   );
 }
