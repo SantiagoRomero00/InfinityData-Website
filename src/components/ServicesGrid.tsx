@@ -13,8 +13,8 @@ const ServicesGrid = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Servicio 1: Automatización de Procesos */}
-          <div className="rounded-3xl p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#29565B'}}>
-            <div className="relative z-10">
+          <div className="rounded-3xl p-8 lg:p-12 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#29565B'}}>
+            <div className="relative z-10 flex flex-col flex-1">
               <div className="mb-8">
                 <Brain className="w-16 h-16 text-white mb-6 drop-shadow-sm" />
               </div>
@@ -27,7 +27,7 @@ const ServicesGrid = () => {
                 Reduci el tiempo de ejecución de tareas con tan solo un click
               </p>
 
-              <div className="mb-8">
+              <div className="mt-auto mb-8">
                 <a href="/demo?service=Automatización de procesos" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
                   Contratar Servicio
                 </a>
@@ -48,8 +48,8 @@ const ServicesGrid = () => {
           </div>
 
           {/* Servicio 2: Soporte al Cliente */}
-          <div className="rounded-3xl p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#47958A'}}>
-            <div className="relative z-10">
+          <div className="rounded-3xl p-8 lg:p-12 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#47958A'}}>
+            <div className="relative z-10 flex flex-col flex-1">
               <div className="mb-8">
                 <MessageSquare className="w-16 h-16 text-white mb-6 drop-shadow-sm" />
               </div>
@@ -62,7 +62,7 @@ const ServicesGrid = () => {
                 Brinda atención a tus usuarios 24/7 con nuestro asistente virtual
               </p>
 
-              <div className="mb-8">
+              <div className="mt-auto mb-8">
                 <a href="/demo?service=Soporte al cliente" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
                   Contratar Servicio
                 </a>
@@ -86,8 +86,8 @@ const ServicesGrid = () => {
           </div>
 
           {/* Servicio 3: Planificador de Llamadas */}
-          <div className="rounded-3xl p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#6EE7C6'}}>
-            <div className="relative z-10">
+          <div className="rounded-3xl p-8 lg:p-12 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#6EE7C6'}}>
+            <div className="relative z-10 flex flex-col flex-1">
               <div className="mb-8">
                 <Calendar className="w-16 h-16 text-emerald-900 mb-6 drop-shadow-sm" />
               </div>
@@ -100,7 +100,7 @@ const ServicesGrid = () => {
                 Convierte leads en reuniones automáticamente
               </p>
 
-              <div className="mb-8">
+              <div className="mt-auto mb-8">
                 <a href="/demo?service=Planificador de llamadas" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
                   Contratar Servicio
                 </a>
@@ -124,8 +124,8 @@ const ServicesGrid = () => {
           </div>
 
           {/* Servicio 4: Integración de Clientes */}
-          <div className="rounded-3xl p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#E8F5E9'}}>
-            <div className="relative z-10">
+          <div className="rounded-3xl p-8 lg:p-12 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#E8F5E9'}}>
+            <div className="relative z-10 flex flex-col flex-1">
               <div className="mb-8">
                 <Users className="w-16 h-16 text-emerald-700 mb-6 drop-shadow-sm" />
               </div>
@@ -138,7 +138,7 @@ const ServicesGrid = () => {
                 Integra y gestiona clientes sin complicaciones
               </p>
 
-              <div className="mb-8">
+              <div className="mt-auto mb-8">
                 <a href="/demo?service=Integración de clientes" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
                   Contratar Servicio
                 </a>
