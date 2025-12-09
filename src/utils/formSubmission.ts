@@ -34,7 +34,7 @@ export const submitLeadForm = async (formData: {
 
     // 3. Enviar a Supabase
     const { data, error } = await supabase
-      .from('lead_consultations')
+      .from('InfinityData_Clients')
       .insert([cleanData])
       .select();
 
@@ -52,40 +52,6 @@ export const submitLeadForm = async (formData: {
     }
 
     console.log('✅ Datos enviados a Supabase exitosamente:', data);
-
-    // 4. Enviar al webhook de n8n
-    try {
-      console.log('📡 Enviando datos al webhook de n8n...');
-      console.log('📦 Payload:', JSON.stringify(cleanData, null, 2));
-
-      const webhookResponse = await fetch('https://n8n-nwyt.onrender.com/webhook-test/Forum', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(cleanData)
-      });
-
-      console.log('📊 Webhook status:', webhookResponse.status);
-
-      const responseText = await webhookResponse.text();
-      console.log('📄 Webhook response:', responseText);
-
-      if (!webhookResponse.ok) {
-        console.error('⚠️ Error al enviar al webhook:', {
-          status: webhookResponse.status,
-          statusText: webhookResponse.statusText,
-          response: responseText
-        });
-      } else {
-        console.log('✅ Datos enviados al webhook exitosamente');
-      }
-    } catch (webhookError) {
-      // No lanzamos error aquí para no afectar la experiencia del usuario
-      // ya que los datos se guardaron correctamente en Supabase
-      console.error('❌ Error al conectar con el webhook:', webhookError);
-    }
 
     return { success: true, data };
 
