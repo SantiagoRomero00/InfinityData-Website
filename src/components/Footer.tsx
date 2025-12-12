@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Infinity, Mail, Phone, MapPin, Instagram } from 'lucide-react';
 
 const Footer = () => {
@@ -89,9 +90,8 @@ const Footer = () => {
               © 2025 Infinity Data. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-emerald-400 transition-colors">Privacidad</a>
-              <a href="#" className="hover:text-emerald-400 transition-colors">Términos</a>
-              <a href="#" className="hover:text-emerald-400 transition-colors">Cookies</a>
+              <Link to="/privacidad" className="hover:text-emerald-400 transition-colors">Política de Privacidad</Link>
+              <Link to="/terminos" className="hover:text-emerald-400 transition-colors">Términos y Condiciones del Servicio</Link>
             </div>
           </div>
         </div>

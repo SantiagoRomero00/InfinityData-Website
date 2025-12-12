@@ -13,6 +13,8 @@ import ErrorBoundary from './components/ErrorBoundary';
 const LeadCaptureForm = lazy(() => import('./components/LeadCaptureForm'));
 const SuccessScreen = lazy(() => import('./components/SuccessScreen'));
 const ServiceDemo = lazy(() => import('./components/ServiceDemo'));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./components/TermsOfService'));
 
 // Loading component
 const LoadingSpinner = () => {
@@ -70,6 +72,22 @@ function App() {
               element={
                 <Suspense fallback={<LoadingSpinner />}>
                   <SuccessScreen />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/privacidad"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <PrivacyPolicy />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/terminos"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <TermsOfService />
                 </Suspense>
               }
             />
