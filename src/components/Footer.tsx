@@ -77,7 +77,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-6">Empresa</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Nosotros</a></li>
+              <li><a href="/nosotros" className="hover:text-emerald-400 transition-colors">Nosotros</a></li>
               <li><a href="#" className="hover:text-emerald-400 transition-colors">Contacto</a></li>
             </ul>
           </div>

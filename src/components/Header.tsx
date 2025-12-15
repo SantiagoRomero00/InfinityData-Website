@@ -95,7 +95,7 @@ const Header = () => {
             <a href="#como-funciona" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
               Cómo Funciona
             </a>
-            <a href="#nosotros" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
+            <a href="/nosotros" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
               Nosotros
             </a>
           </nav>

@@ -15,6 +15,7 @@ const SuccessScreen = lazy(() => import('./components/SuccessScreen'));
 const ServiceDemo = lazy(() => import('./components/ServiceDemo'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
+const AboutUs = lazy(() => import('./components/AboutUs'));
 
 // Loading component
 const LoadingSpinner = () => {
@@ -88,6 +89,14 @@ function App() {
               element={
                 <Suspense fallback={<LoadingSpinner />}>
                   <TermsOfService />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/nosotros"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <AboutUs />
                 </Suspense>
               }
             />
