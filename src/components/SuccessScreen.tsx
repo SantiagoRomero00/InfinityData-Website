@@ -87,8 +87,8 @@ const SuccessScreen = () => {
               <h3 className="font-semibold text-gray-900 mb-4">¿Tienes alguna pregunta?</h3>
               <div className="flex items-center justify-center space-x-2 text-gray-600">
                 <Mail className="w-5 h-5" />
-                <a href="mailto:infinitydata.team@gmail.com" className="hover:text-emerald-600 transition-colors">
-                  infinitydata.team@gmail.com
+                <a href="mailto:santiagoromero@getinfinitydata.com" className="hover:text-emerald-600 transition-colors">
+                  santiagoromero@getinfinitydata.com
                 </a>
               </div>
             </div>
