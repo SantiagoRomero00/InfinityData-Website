@@ -66,10 +66,10 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-6">Servicios</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Automatización de Procesos</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Soporte al Cliente</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Planificador de Llamadas</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Integración de Clientes</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors">Automatización de Procesos</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors">Soporte al Cliente</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors">Planificador de Llamadas</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors">Integración de Clientes</a></li>
             </ul>
           </div>
 
