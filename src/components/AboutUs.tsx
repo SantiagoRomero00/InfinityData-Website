@@ -2,6 +2,11 @@ import React from 'react';
 import { Infinity, ArrowLeft, GraduationCap, Award, Zap, Search, Settings, TrendingUp } from 'lucide-react';
 import Footer from './Footer';
 import profileImage from '../../Assets/cropped_pp.jpeg';
+import n8nLogo from '../../Assets/n8n.svg';
+import makeLogo from '../../Assets/make.svg';
+import openaiLogo from '../../Assets/openai.svg';
+import phantombusterLogo from '../../Assets/phantombuster.svg';
+import instantlyLogo from '../../Assets/instantly.svg';
 
 const AboutUs = () => {
   return (
@@ -60,8 +65,8 @@ const AboutUs = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Ingeniero Industrial</h3>
-                    <p className="text-gray-600 text-sm">Especializado en optimización de procesos y sistemas</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">Ingeniería en Informática</h3>
+                    <p className="text-gray-600 text-sm">Ingeniería en Informática – Universidad Nacional de La Matanza</p>
                   </div>
                 </div>
 
@@ -98,38 +103,52 @@ const AboutUs = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
               Dominamos la tecnología líder del mercado
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 group">
-                <div className="text-4xl font-bold text-gray-400 group-hover:text-emerald-600 transition-colors duration-300 mb-2">n8n</div>
-                <p className="text-sm text-gray-600 text-center">Automatización</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
+                <img
+                  src={n8nLogo}
+                  alt="n8n"
+                  className="h-16 w-auto mb-4 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
+                />
+                <p className="text-sm text-gray-600 text-center font-medium">n8n</p>
               </div>
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 group">
-                <div className="text-4xl font-bold text-gray-400 group-hover:text-emerald-600 transition-colors duration-300 mb-2">Make</div>
-                <p className="text-sm text-gray-600 text-center">Integración</p>
+              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
+                <img
+                  src={makeLogo}
+                  alt="Make"
+                  className="h-16 w-auto mb-4 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
+                />
+                <p className="text-sm text-gray-600 text-center font-medium">Make</p>
               </div>
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 group">
-                <div className="text-4xl font-bold text-gray-400 group-hover:text-emerald-600 transition-colors duration-300 mb-2">AI</div>
-                <p className="text-sm text-gray-600 text-center">OpenAI</p>
+              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
+                <img
+                  src={openaiLogo}
+                  alt="OpenAI"
+                  className="h-16 w-auto mb-4 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
+                />
+                <p className="text-sm text-gray-600 text-center font-medium">OpenAI</p>
               </div>
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 group">
-                <div className="text-4xl font-bold text-gray-400 group-hover:text-emerald-600 transition-colors duration-300 mb-2">Py</div>
-                <p className="text-sm text-gray-600 text-center">Python</p>
+              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
+                <div className="h-16 flex items-center justify-center mb-4">
+                  <div className="text-5xl font-bold text-gray-400 grayscale group-hover:grayscale-0 group-hover:text-emerald-600 group-hover:scale-110 transition-all duration-300">SQL</div>
+                </div>
+                <p className="text-sm text-gray-600 text-center font-medium">Bases de Datos</p>
               </div>
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 group">
-                <div className="text-4xl font-bold text-gray-400 group-hover:text-emerald-600 transition-colors duration-300 mb-2">SQL</div>
-                <p className="text-sm text-gray-600 text-center">Bases de Datos</p>
+              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
+                <img
+                  src={phantombusterLogo}
+                  alt="PhantomBuster"
+                  className="h-16 w-auto mb-4 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
+                />
+                <p className="text-sm text-gray-600 text-center font-medium">PhantomBuster</p>
               </div>
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 group">
-                <div className="text-3xl font-bold text-gray-400 group-hover:text-emerald-600 transition-colors duration-300 mb-2">PB</div>
-                <p className="text-sm text-gray-600 text-center">PhantomBuster</p>
-              </div>
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 group">
-                <div className="text-3xl font-bold text-gray-400 group-hover:text-emerald-600 transition-colors duration-300 mb-2">Inst</div>
-                <p className="text-sm text-gray-600 text-center">Instantly.ai</p>
-              </div>
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 group">
-                <div className="text-3xl font-bold text-gray-400 group-hover:text-emerald-600 transition-colors duration-300 mb-2">API</div>
-                <p className="text-sm text-gray-600 text-center">Integraciones</p>
+              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
+                <img
+                  src={instantlyLogo}
+                  alt="Instantly.ai"
+                  className="h-16 w-auto mb-4 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
+                />
+                <p className="text-sm text-gray-600 text-center font-medium">Instantly.ai</p>
               </div>
             </div>
           </div>
