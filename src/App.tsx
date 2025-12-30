@@ -6,7 +6,7 @@ import ServicesGrid from './components/ServicesGrid';
 import HowItWorks from './components/HowItWorks';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
-import VoiceflowWidget from './components/VoiceflowWidget';
+// import VoiceflowWidget from './components/VoiceflowWidget';
 import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy load the form component for better performance
@@ -102,7 +102,7 @@ function App() {
             />
           </Routes>
           {/* Voiceflow Widget - Available on all pages */}
-          <VoiceflowWidget />
+          {/* <VoiceflowWidget /> */}
         </div>
       </ErrorBoundary>
     </Router>
