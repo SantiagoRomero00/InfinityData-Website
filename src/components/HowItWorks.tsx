@@ -28,7 +28,7 @@ const HowItWorks = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-6xl font-bold text-white mb-6">
-            Cómo Funciona
+            ¿Cómo trabajamos?
           </h2>
           <p className="text-2xl text-gray-300 font-normal max-w-3xl mx-auto">
             Un proceso simple y probado para transformar tu negocio con IA
