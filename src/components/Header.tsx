@@ -93,7 +93,7 @@ const Header = () => {
               Servicios
             </a>
             <a href="#como-funciona" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
-              Cómo Funciona
+              ¿Cómo trabajamos?
             </a>
             <a href="/nosotros" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
               Nosotros
