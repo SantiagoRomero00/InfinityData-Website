@@ -78,7 +78,7 @@ const AboutUs = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Experto en Automatización</h3>
-                    <p className="text-gray-600 text-sm">N8n, Make, Python y soluciones de IA avanzada</p>
+                    <p className="text-gray-600 text-sm">Make & n8n</p>
                   </div>
                 </div>
 
