@@ -51,7 +51,7 @@ const AboutUs = () => {
                 Nosotros
               </h1>
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Soy Santiago, ingeniero industrial y fundador de Infinity Data. Mi misión es transformar empresas mediante automatización inteligente y soluciones de IA que generan resultados medibles.
+                Soy Santiago, ingeniero en informática y fundador de Infinity Data. Mi misión es transformar empresas mediante automatización inteligente y soluciones de IA que generan resultados medibles.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed mb-10">
                 Con formación en ingeniería y experiencia práctica en implementación de sistemas, ayudo a empresas a optimizar procesos, captar leads de forma escalable y construir infraestructuras tecnológicas robustas.
