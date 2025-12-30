@@ -14,13 +14,6 @@ const AboutUs = () => {
       <header className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="relative">
-                <Infinity className="w-8 h-8 text-emerald-600" />
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
-              </div>
-              <span className="text-xl font-bold text-gray-900">Infinity Data</span>
-            </div>
             <button
               onClick={() => window.history.back()}
               className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2"
@@ -28,6 +21,14 @@ const AboutUs = () => {
               <ArrowLeft className="w-4 h-4" />
               <span>Volver</span>
             </button>
+            <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
+              <div className="relative">
+                <Infinity className="w-8 h-8 text-emerald-600" />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
+              </div>
+              <span className="text-xl font-bold text-gray-900">Infinity Data</span>
+            </div>
+            <div className="w-24"></div>
           </div>
         </div>
       </header>

@@ -23,8 +23,8 @@ const Footer = () => {
             <div className="flex space-x-4">
               <div className="flex items-center space-x-2 text-gray-300">
                 <Mail className="w-5 h-5" />
-                <a href="mailto:infinitydata.team@gmail.com" className="hover:text-emerald-400 transition-colors">
-                  infinitydata.team@gmail.com
+                <a href="mailto:santiagoromero@getinfinitydata.com" className="hover:text-emerald-400 transition-colors">
+                  santiagoromero@getinfinitydata.com
                 </a>
               </div>
             </div>
@@ -87,7 +87,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 Infinity Data. Todos los derechos reservados.
+              © 2026 Infinity Data. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400">
               <Link to="/privacidad" className="hover:text-emerald-400 transition-colors">Política de Privacidad</Link>
