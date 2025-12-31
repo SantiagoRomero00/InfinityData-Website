@@ -4,26 +4,26 @@ import { Infinity, Mail, Phone, MapPin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1D1D1F] text-white py-16">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-[#1D1D1F] text-white py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
           {/* Logo and Description */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
+            <div className="flex items-center space-x-2 mb-4 sm:mb-6">
               <div className="relative">
-                <Infinity className="w-8 h-8 text-emerald-400" />
+                <Infinity className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-400" />
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-emerald-300 opacity-20 rounded-full blur-sm"></div>
               </div>
-              <span className="text-2xl font-bold">Infinity Data</span>
+              <span className="text-xl sm:text-2xl font-bold">Infinity Data</span>
             </div>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6 max-w-md">
-              Transformamos negocios con automatización de IA inteligente. 
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 max-w-md">
+              Transformamos negocios con automatización de IA inteligente.
               Tu socio estratégico para el crecimiento digital.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
               <div className="flex items-center space-x-2 text-gray-300">
-                <Mail className="w-5 h-5" />
-                <a href="mailto:santiagoromero@getinfinitydata.com" className="hover:text-emerald-400 transition-colors">
+                <Mail className="w-5 h-5 flex-shrink-0" />
+                <a href="mailto:santiagoromero@getinfinitydata.com" className="hover:text-emerald-400 transition-colors break-all text-sm sm:text-base">
                   santiagoromero@getinfinitydata.com
                 </a>
               </div>
@@ -64,34 +64,34 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Servicios</h3>
-            <ul className="space-y-3 text-gray-300">
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors">Automatización de Procesos</a></li>
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors">Soporte al Cliente</a></li>
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors">Planificador de Llamadas</a></li>
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors">Integración de Clientes</a></li>
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Servicios</h3>
+            <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base">
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">Automatización de Procesos</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">Soporte al Cliente</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">Planificador de Llamadas</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">Integración de Clientes</a></li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Empresa</h3>
-            <ul className="space-y-3 text-gray-300">
-              <li><a href="/nosotros" className="hover:text-emerald-400 transition-colors">Nosotros</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Contacto</a></li>
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Empresa</h3>
+            <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base">
+              <li><a href="/nosotros" className="hover:text-emerald-400 transition-colors inline-block py-1">Nosotros</a></li>
+              <li><a href="#" className="hover:text-emerald-400 transition-colors inline-block py-1">Contacto</a></li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+        <div className="border-t border-gray-700 pt-6 sm:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
               © 2026 Infinity Data. Todos los derechos reservados.
             </p>
-            <div className="flex space-x-6 text-sm text-gray-400">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-xs sm:text-sm text-gray-400 text-center">
               <Link to="/privacidad" className="hover:text-emerald-400 transition-colors">Política de Privacidad</Link>
-              <Link to="/terminos" className="hover:text-emerald-400 transition-colors">Términos y Condiciones del Servicio</Link>
+              <Link to="/terminos" className="hover:text-emerald-400 transition-colors break-words">Términos y Condiciones</Link>
             </div>
           </div>
         </div>

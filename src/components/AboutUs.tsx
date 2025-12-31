@@ -12,30 +12,30 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <header className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <button
               onClick={() => window.history.back()}
-              className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2"
+              className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2 text-sm sm:text-base"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span>Volver</span>
+              <span className="hidden sm:inline">Volver</span>
             </button>
-            <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
+            <div className="flex items-center space-x-2 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
               <div className="relative">
-                <Infinity className="w-8 h-8 text-emerald-600" />
+                <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
               </div>
-              <span className="text-xl font-bold text-gray-900">Infinity Data</span>
+              <span className="text-lg sm:text-xl font-bold text-gray-900">Infinity Data</span>
             </div>
-            <div className="w-24"></div>
+            <div className="w-10 sm:w-24"></div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-16">
-        <section className="mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+        <section className="mb-12 sm:mb-16 md:mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="relative group">
                 <img
@@ -48,13 +48,13 @@ const AboutUs = () => {
             </div>
 
             <div className="order-1 lg:order-2">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Nosotros
               </h1>
-              <p className="text-xl text-gray-700 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8">
                 Soy Santiago, ingeniero en informática y fundador de Infinity Data. Mi misión es transformar empresas mediante automatización inteligente y soluciones de IA que generan resultados medibles.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed mb-10">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-10">
                 Con formación en ingeniería y experiencia práctica en implementación de sistemas, ayudo a empresas a optimizar procesos, captar leads de forma escalable y construir infraestructuras tecnológicas robustas.
               </p>
 
@@ -99,12 +99,12 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="mb-20">
-          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+        <section className="mb-12 sm:mb-16 md:mb-20">
+          <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
               Dominamos la tecnología líder del mercado
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
                 <img
                   src={n8nLogo}
@@ -155,16 +155,16 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+        <section className="mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Cómo Trabajamos
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
-                <Search className="w-8 h-8 text-emerald-600" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                <Search className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">1. Auditoría</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">1. Auditoría</h3>
               <p className="text-gray-600 leading-relaxed">
                 Analizamos a fondo tus procesos actuales, identificamos cuellos de botella y oportunidades de automatización que generen el mayor impacto.
               </p>

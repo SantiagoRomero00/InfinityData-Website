@@ -95,49 +95,49 @@ const LeadCaptureForm = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <button
               onClick={() => window.history.back()}
-              className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2"
+              className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2 text-sm sm:text-base"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span>Volver</span>
+              <span className="hidden sm:inline">Volver</span>
             </button>
-            
-            <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
+
+            <div className="flex items-center space-x-2 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
               <div className="relative">
-                <Infinity className="w-8 h-8 text-emerald-600" />
+                <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
               </div>
-              <span className="text-2xl font-bold text-gray-900">Infinity Data</span>
+              <span className="text-lg sm:text-2xl font-bold text-gray-900">Infinity Data</span>
             </div>
-            
-            <div></div>
+
+            <div className="w-10 sm:w-0"></div>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
             Comienza tu
             <br />
             <span className="bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent">
               Transformación Digital
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Completa el formulario y nuestro equipo te contactará en menos de 24 horas 
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
+            Completa el formulario y nuestro equipo te contactará en menos de 24 horas
             con una propuesta personalizada para tu negocio.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+            <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-12">
               {submitStatus === 'success' && (
                 <div className="mb-8 p-6 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center space-x-3">
                   <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0" />
@@ -161,10 +161,10 @@ const LeadCaptureForm = () => {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-3">
+                  <label htmlFor="name" className="block text-xs sm:text-sm font-semibold text-gray-900 mb-2 sm:mb-3">
                     Nombre Completo *
                   </label>
                   <input
@@ -317,17 +317,17 @@ const LeadCaptureForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 disabled:from-gray-400 disabled:to-gray-400 text-white px-8 py-5 rounded-xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:cursor-not-allowed flex items-center justify-center space-x-3"
+                  className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 disabled:from-gray-400 disabled:to-gray-400 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:cursor-not-allowed flex items-center justify-center space-x-3"
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-6 h-6 animate-spin" />
+                      <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />
                       <span>Enviando...</span>
                     </>
                   ) : (
                     <>
                       <span>Enviar Solicitud</span>
-                      <ArrowRight className="w-6 h-6" />
+                      <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
                     </>
                   )}
                 </button>
@@ -336,10 +336,10 @@ const LeadCaptureForm = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Trust Indicators */}
-            <div className="bg-white rounded-3xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">¿Por qué elegirnos?</h3>
+            <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">¿Por qué elegirnos?</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -374,9 +374,9 @@ const LeadCaptureForm = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="bg-gradient-to-br from-emerald-600 to-emerald-500 rounded-3xl shadow-xl p-8 lg:p-12 text-white">
-              <h3 className="text-2xl font-bold mb-6">¿Necesitas ayuda?</h3>
-              <p className="text-emerald-100 mb-6 leading-relaxed">
+            <div className="bg-gradient-to-br from-emerald-600 to-emerald-500 rounded-3xl shadow-xl p-6 sm:p-8 lg:p-12 text-white">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">¿Necesitas ayuda?</h3>
+              <p className="text-emerald-100 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 Nuestro equipo está disponible para resolver cualquier duda sobre nuestros servicios.
               </p>
               <div className="space-y-4">
@@ -404,10 +404,10 @@ const LeadCaptureForm = () => {
         </div>
 
         {/* Privacy Notice */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-500 text-sm max-w-2xl mx-auto">
-            Al enviar este formulario, aceptas que Infinity Data procese tu información de acuerdo con nuestra 
-            <a href="#" className="text-emerald-600 hover:text-emerald-700 font-medium"> Política de Privacidad</a>. 
+        <div className="mt-8 sm:mt-12 text-center px-4">
+          <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto">
+            Al enviar este formulario, aceptas que Infinity Data procese tu información de acuerdo con nuestra
+            <a href="#" className="text-emerald-600 hover:text-emerald-700 font-medium"> Política de Privacidad</a>.
             Nunca compartiremos tu información con terceros.
           </p>
         </div>
