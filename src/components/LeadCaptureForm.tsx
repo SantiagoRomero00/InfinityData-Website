@@ -122,7 +122,7 @@ const LeadCaptureForm = () => {
       </header>
 
       {/* Fixed Language Switcher */}
-      <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
+      <div className="fixed top-4 left-4 md:top-6 md:left-auto md:right-6 z-40">
         <LanguageSwitch textColor="text-gray-700/80" hoverColor="hover:text-gray-900" />
       </div>
 
