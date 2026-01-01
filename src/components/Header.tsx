@@ -102,7 +102,6 @@ const Header = () => {
             <a href="/nosotros" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
               {t('header.nav.about')}
             </a>
-            <LanguageSwitch />
           </nav>
 
           {/* CTA Button & Mobile Menu Toggle */}
@@ -131,9 +130,6 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-gray-200/50">
           <nav className="px-4 py-4 space-y-3 bg-white/95 backdrop-blur-md">
-            <div className="flex justify-center mb-2">
-              <LanguageSwitch />
-            </div>
             <a
               href="#servicios"
               onClick={() => setMobileMenuOpen(false)}
@@ -165,6 +161,11 @@ const Header = () => {
           </nav>
         </div>
       )}
+
+      {/* Fixed Language Switcher */}
+      <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
+        <LanguageSwitch variant={currentSection === 'hero' ? 'light' : 'dark'} />
+      </div>
     </header>
   );
 };

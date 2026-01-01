@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowRight, Shield, CheckCircle, AlertCircle, Loader2, Infinity, ArrowLeft } from 'lucide-react';
 import { submitLeadForm, validateFormData } from '../utils/formSubmission';
 import { useTranslation } from '../hooks/useTranslation';
+import LanguageSwitch from './LanguageSwitch';
 
 interface FormData {
   name: string;
@@ -119,6 +120,11 @@ const LeadCaptureForm = () => {
           </div>
         </div>
       </header>
+
+      {/* Fixed Language Switcher */}
+      <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
+        <LanguageSwitch variant="dark" />
+      </div>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">

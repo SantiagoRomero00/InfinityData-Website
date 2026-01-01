@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Infinity, ArrowLeft, Mail, Calendar } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
+import LanguageSwitch from './LanguageSwitch';
 
 const SuccessScreen = () => {
   const { t } = useTranslation();
@@ -29,6 +30,11 @@ const SuccessScreen = () => {
           </div>
         </div>
       </header>
+
+      {/* Fixed Language Switcher */}
+      <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
+        <LanguageSwitch variant="dark" />
+      </div>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">

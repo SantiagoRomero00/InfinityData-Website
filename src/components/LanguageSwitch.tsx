@@ -1,17 +1,32 @@
 import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 
-const LanguageSwitch = () => {
+interface LanguageSwitchProps {
+  variant?: 'light' | 'dark';
+  className?: string;
+}
+
+const LanguageSwitch: React.FC<LanguageSwitchProps> = ({
+  variant = 'dark',
+  className = ''
+}) => {
   const { language, setLanguage } = useTranslation();
 
   const toggleLanguage = () => {
     setLanguage(language === 'es' ? 'en' : 'es');
   };
 
+  const variantStyles = {
+    light: 'text-white drop-shadow-lg hover:opacity-80',
+    dark: 'text-gray-900 hover:text-emerald-600'
+  };
+
+  const textStyle = variantStyles[variant];
+
   return (
     <button
       onClick={toggleLanguage}
-      className="px-3 py-2 rounded-lg border border-gray-200 hover:border-emerald-400 text-gray-600 hover:text-emerald-600 transition-colors duration-200 font-medium text-sm flex items-center space-x-2 min-h-[44px]"
+      className={`font-medium text-sm flex items-center space-x-2 min-h-[44px] min-w-[44px] transition-all duration-200 ${textStyle} ${className}`}
       aria-label="Switch language"
     >
       <span>{language === 'es' ? 'ES' : 'US'}</span>

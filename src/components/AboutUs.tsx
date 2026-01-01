@@ -2,6 +2,7 @@ import React from 'react';
 import { Infinity, ArrowLeft, GraduationCap, Award, Zap, Search, Settings, TrendingUp } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import Footer from './Footer';
+import LanguageSwitch from './LanguageSwitch';
 import profileImage from '../../Assets/cropped_pp.jpeg';
 import n8nLogo from '../../Assets/n8n.svg';
 import makeLogo from '../../Assets/make.svg';
@@ -35,6 +36,11 @@ const AboutUs = () => {
           </div>
         </div>
       </header>
+
+      {/* Fixed Language Switcher */}
+      <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
+        <LanguageSwitch variant="dark" />
+      </div>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
         <section className="mb-12 sm:mb-16 md:mb-20">

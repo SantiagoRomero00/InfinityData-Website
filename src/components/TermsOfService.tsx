@@ -2,6 +2,7 @@ import React from 'react';
 import { Infinity, ArrowLeft } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import Footer from './Footer';
+import LanguageSwitch from './LanguageSwitch';
 
 const TermsOfService = () => {
   const { t } = useTranslation();
@@ -29,6 +30,11 @@ const TermsOfService = () => {
           </div>
         </div>
       </header>
+
+      {/* Fixed Language Switcher */}
+      <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
+        <LanguageSwitch variant="dark" />
+      </div>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-16">
