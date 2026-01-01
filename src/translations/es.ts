@@ -244,7 +244,7 @@ export default {
     title: "¡Hablemos de tu proyecto!",
     subtitle: "Estamos listos para transformar tu negocio con automatización inteligente.",
     email: {
-      label: "Escríbenos por email",
+      label: "Escribinos por email",
       address: "santiagoromero@getinfinitydata.com"
     },
     whatsapp: {
