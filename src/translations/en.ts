@@ -195,7 +195,7 @@ export default {
   about: {
     title: "About Us",
     bio: {
-      paragraph1: "I'm Santiago, a computer engineer and founder of Infinity Data. My mission is to transform companies through intelligent automation and AI solutions that generate measurable results.",
+      paragraph1: "I'm Santiago, a computer engineer and founder of Infinity Data. Our mission is to transform companies through intelligent automation and AI solutions that generate measurable results.",
       paragraph2: "With engineering training and practical experience in systems implementation, I help companies optimize processes, capture leads at scale, and build robust technological infrastructures."
     },
     credentials: {
