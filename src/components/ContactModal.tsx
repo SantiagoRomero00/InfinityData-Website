@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { X, Mail, MessageCircle } from 'lucide-react';
+import { X, Mail } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
+import whatsappIcon from '../../Assets/whatsapp.svg';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -111,7 +112,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               className="flex items-center p-4 sm:p-6 border-2 border-gray-200 rounded-2xl hover:border-emerald-400 hover:bg-emerald-50 transition-all duration-300 cursor-pointer group min-h-[64px]"
             >
               <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center group-hover:bg-emerald-200 transition-colors duration-300">
-                <MessageCircle className="w-6 h-6 text-emerald-600" />
+                <img src={whatsappIcon} alt="WhatsApp" className="w-7 h-7" />
               </div>
               <div className="ml-4 flex-1">
                 <div className="font-semibold text-gray-900 text-base sm:text-lg">
