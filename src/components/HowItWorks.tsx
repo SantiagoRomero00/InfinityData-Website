@@ -1,25 +1,28 @@
 import React from 'react';
 import { Search, Settings, TrendingUp } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const HowItWorks = () => {
+  const { t } = useTranslation();
+
   const steps = [
     {
       number: "01",
       icon: Search,
-      title: "Descubrir",
-      description: "Analizamos tu negocio y identificamos oportunidades de automatización"
+      title: t('howItWorks.steps.discover.title'),
+      description: t('howItWorks.steps.discover.description')
     },
     {
-      number: "02", 
+      number: "02",
       icon: Settings,
-      title: "Implementar",
-      description: "Desarrollamos e integramos soluciones de IA personalizadas para tu empresa"
+      title: t('howItWorks.steps.implement.title'),
+      description: t('howItWorks.steps.implement.description')
     },
     {
       number: "03",
       icon: TrendingUp,
-      title: "Escalar",
-      description: "Optimizamos y expandimos tus sistemas para maximizar el crecimiento"
+      title: t('howItWorks.steps.scale.title'),
+      description: t('howItWorks.steps.scale.description')
     }
   ];
 
@@ -28,10 +31,10 @@ const HowItWorks = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
-            ¿Cómo trabajamos?
+            {t('howItWorks.title')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-normal max-w-3xl mx-auto px-4">
-            Un proceso simple y probado para transformar tu negocio con IA
+            {t('howItWorks.subtitle')}
           </p>
         </div>
 

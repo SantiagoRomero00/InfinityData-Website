@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowRight, Shield, CheckCircle, AlertCircle, Loader2, Infinity, ArrowLeft } from 'lucide-react';
 import { submitLeadForm, validateFormData } from '../utils/formSubmission';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface FormData {
   name: string;
@@ -23,6 +24,7 @@ interface FormErrors {
 const LeadCaptureForm = () => {
   console.log('✅ LeadCaptureForm component mounting...');
 
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
@@ -46,11 +48,11 @@ const LeadCaptureForm = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   const serviceOptions = [
-    { value: '', label: 'Selecciona un servicio' },
-    { value: 'Automatización de procesos', label: 'Automatización de procesos' },
-    { value: 'Soporte al cliente', label: 'Soporte al cliente' },
-    { value: 'Planificador de llamadas', label: 'Planificador de llamadas' },
-    { value: 'Integración de clientes', label: 'Integración de clientes' }
+    { value: '', label: t('leadForm.serviceOptions.select') },
+    { value: 'Automatización de procesos', label: t('leadForm.serviceOptions.processAutomation') },
+    { value: 'Soporte al cliente', label: t('leadForm.serviceOptions.customerSupport') },
+    { value: 'Planificador de llamadas', label: t('leadForm.serviceOptions.callScheduler') },
+    { value: 'Integración de clientes', label: t('leadForm.serviceOptions.customerIntegration') }
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -65,9 +67,9 @@ const LeadCaptureForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validar formulario
-    const validation = validateFormData(formData);
+    const validation = validateFormData(formData, t);
     if (!validation.isValid) {
       setErrors(validation.errors);
       return;
@@ -102,7 +104,7 @@ const LeadCaptureForm = () => {
               className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2 text-sm sm:text-base"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Volver</span>
+              <span className="hidden sm:inline">{t('common.back')}</span>
             </button>
 
             <div className="flex items-center space-x-2 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
@@ -122,15 +124,14 @@ const LeadCaptureForm = () => {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-            Comienza tu
+            {t('leadForm.title.line1')}
             <br />
             <span className="bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent">
-              Transformación Digital
+              {t('leadForm.title.line2')}
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
-            Completa el formulario y nuestro equipo te contactará en menos de 24 horas
-            con una propuesta personalizada para tu negocio.
+            {t('leadForm.subtitle')}
           </p>
         </div>
 
@@ -142,8 +143,8 @@ const LeadCaptureForm = () => {
                 <div className="mb-8 p-6 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center space-x-3">
                   <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-emerald-800">¡Solicitud enviada exitosamente!</h3>
-                    <p className="text-emerald-700">Te contactaremos en las próximas 24 horas.</p>
+                    <h3 className="font-semibold text-emerald-800">{t('leadForm.success.title')}</h3>
+                    <p className="text-emerald-700">{t('leadForm.success.message')}</p>
                   </div>
                 </div>
               )}
@@ -152,10 +153,10 @@ const LeadCaptureForm = () => {
                 <div className="mb-8 p-6 bg-red-50 border border-red-200 rounded-2xl flex items-center space-x-3">
                   <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-red-800">Error al enviar</h3>
+                    <h3 className="font-semibold text-red-800">{t('leadForm.error.title')}</h3>
                     <p className="text-red-700">{errorMessage}</p>
                     <p className="text-red-600 text-sm mt-2">
-                      Si el problema persiste, contáctanos directamente a infinitydata.team@gmail.com
+                      {t('leadForm.error.contactMessage')}
                     </p>
                   </div>
                 </div>
@@ -165,7 +166,7 @@ const LeadCaptureForm = () => {
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-xs sm:text-sm font-semibold text-gray-900 mb-2 sm:mb-3">
-                    Nombre Completo *
+                    {t('leadForm.fields.name')}
                   </label>
                   <input
                     type="text"
@@ -174,11 +175,11 @@ const LeadCaptureForm = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-4 border-2 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 ${
-                      errors.name 
-                        ? 'border-red-300 focus:border-red-500' 
+                      errors.name
+                        ? 'border-red-300 focus:border-red-500'
                         : 'border-gray-200 focus:border-emerald-500'
                     }`}
-                    placeholder="Tu nombre completo"
+                    placeholder={t('leadForm.placeholders.name')}
                     aria-describedby={errors.name ? 'name-error' : undefined}
                   />
                   {errors.name && (
@@ -191,7 +192,7 @@ const LeadCaptureForm = () => {
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-3">
-                    Email Corporativo *
+                    {t('leadForm.fields.email')}
                   </label>
                   <input
                     type="email"
@@ -200,11 +201,11 @@ const LeadCaptureForm = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-4 border-2 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 ${
-                      errors.email 
-                        ? 'border-red-300 focus:border-red-500' 
+                      errors.email
+                        ? 'border-red-300 focus:border-red-500'
                         : 'border-gray-200 focus:border-emerald-500'
                     }`}
-                    placeholder="tu@empresa.com"
+                    placeholder={t('leadForm.placeholders.email')}
                     aria-describedby={errors.email ? 'email-error' : undefined}
                   />
                   {errors.email && (
@@ -217,7 +218,7 @@ const LeadCaptureForm = () => {
                 {/* Service Selection */}
                 <div>
                   <label htmlFor="service" className="block text-sm font-semibold text-gray-900 mb-3">
-                    Servicio de Interés *
+                    {t('leadForm.fields.service')}
                   </label>
                   <select
                     id="service"
@@ -247,7 +248,7 @@ const LeadCaptureForm = () => {
                 {/* Company Name */}
                 <div>
                   <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-3">
-                    Nombre de la Empresa *
+                    {t('leadForm.fields.company')}
                   </label>
                   <input
                     type="text"
@@ -256,11 +257,11 @@ const LeadCaptureForm = () => {
                     value={formData.company}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-4 border-2 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 ${
-                      errors.company 
-                        ? 'border-red-300 focus:border-red-500' 
+                      errors.company
+                        ? 'border-red-300 focus:border-red-500'
                         : 'border-gray-200 focus:border-emerald-500'
                     }`}
-                    placeholder="Nombre de tu empresa"
+                    placeholder={t('leadForm.placeholders.company')}
                     aria-describedby={errors.company ? 'company-error' : undefined}
                   />
                   {errors.company && (
@@ -273,7 +274,7 @@ const LeadCaptureForm = () => {
                 {/* Problems */}
                 <div>
                   <label htmlFor="problems" className="block text-sm font-semibold text-gray-900 mb-3">
-                    ¿Qué problemas buscas resolver? *
+                    {t('leadForm.fields.problems')}
                   </label>
                   <textarea
                     id="problems"
@@ -282,11 +283,11 @@ const LeadCaptureForm = () => {
                     onChange={handleInputChange}
                     rows={4}
                     className={`w-full px-4 py-4 border-2 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 resize-none ${
-                      errors.problems 
-                        ? 'border-red-300 focus:border-red-500' 
+                      errors.problems
+                        ? 'border-red-300 focus:border-red-500'
                         : 'border-gray-200 focus:border-emerald-500'
                     }`}
-                    placeholder="Describe los desafíos específicos que enfrenta tu negocio y cómo la automatización con IA podría ayudarte..."
+                    placeholder={t('leadForm.placeholders.problems')}
                     aria-describedby={errors.problems ? 'problems-error' : undefined}
                   />
                   {errors.problems && (
@@ -299,8 +300,8 @@ const LeadCaptureForm = () => {
                 {/* Additional Information */}
                 <div>
                   <label htmlFor="additionalInfo" className="block text-sm font-semibold text-gray-900 mb-3">
-                    Información Adicional
-                    <span className="text-gray-500 font-normal ml-2">(Opcional)</span>
+                    {t('leadForm.fields.additionalInfo')}
+                    <span className="text-gray-500 font-normal ml-2">{t('leadForm.fields.optional')}</span>
                   </label>
                   <textarea
                     id="additionalInfo"
@@ -309,7 +310,7 @@ const LeadCaptureForm = () => {
                     onChange={handleInputChange}
                     rows={3}
                     className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 focus:border-emerald-500 resize-none"
-                    placeholder="Cualquier información adicional que consideres relevante..."
+                    placeholder={t('leadForm.placeholders.additionalInfo')}
                   />
                 </div>
 
@@ -322,11 +323,11 @@ const LeadCaptureForm = () => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />
-                      <span>Enviando...</span>
+                      <span>{t('leadForm.submitting')}</span>
                     </>
                   ) : (
                     <>
-                      <span>Enviar Solicitud</span>
+                      <span>{t('leadForm.submitButton')}</span>
                       <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
                     </>
                   )}
@@ -339,35 +340,35 @@ const LeadCaptureForm = () => {
           <div className="lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Trust Indicators */}
             <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">¿Por qué elegirnos?</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{t('leadForm.whyUs.title')}</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Respuesta en 24h</h4>
-                    <p className="text-gray-600 text-sm">Te contactamos rápidamente con una propuesta personalizada</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">{t('leadForm.whyUs.benefit1.title')}</h4>
+                    <p className="text-gray-600 text-sm">{t('leadForm.whyUs.benefit1.description')}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Shield className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">100% Seguro</h4>
-                    <p className="text-gray-600 text-sm">Tus datos están protegidos con encriptación de nivel empresarial</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">{t('leadForm.whyUs.benefit2.title')}</h4>
+                    <p className="text-gray-600 text-sm">{t('leadForm.whyUs.benefit2.description')}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Sin Compromiso</h4>
-                    <p className="text-gray-600 text-sm">Consulta gratuita sin obligación de contratación</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">{t('leadForm.whyUs.benefit3.title')}</h4>
+                    <p className="text-gray-600 text-sm">{t('leadForm.whyUs.benefit3.description')}</p>
                   </div>
                 </div>
               </div>
@@ -375,9 +376,9 @@ const LeadCaptureForm = () => {
 
             {/* Contact Info */}
             <div className="bg-gradient-to-br from-emerald-600 to-emerald-500 rounded-3xl shadow-xl p-6 sm:p-8 lg:p-12 text-white">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">¿Necesitas ayuda?</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t('leadForm.contactInfo.title')}</h3>
               <p className="text-emerald-100 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                Nuestro equipo está disponible para resolver cualquier duda sobre nuestros servicios.
+                {t('leadForm.contactInfo.description')}
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
@@ -385,7 +386,7 @@ const LeadCaptureForm = () => {
                     <span className="text-xl">📧</span>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-white font-semibold">Email</p>
+                    <p className="text-white font-semibold">{t('leadForm.contactInfo.email')}</p>
                     <p className="text-emerald-100 text-sm break-all">infinitydata.team@gmail.com</p>
                   </div>
                 </div>
@@ -394,8 +395,8 @@ const LeadCaptureForm = () => {
                     <span className="text-xl">💬</span>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-white font-semibold">Soporte</p>
-                    <p className="text-emerald-100 text-sm">Chat en vivo disponible</p>
+                    <p className="text-white font-semibold">{t('leadForm.contactInfo.support')}</p>
+                    <p className="text-emerald-100 text-sm">{t('leadForm.contactInfo.liveChat')}</p>
                   </div>
                 </div>
               </div>
@@ -406,9 +407,7 @@ const LeadCaptureForm = () => {
         {/* Privacy Notice */}
         <div className="mt-8 sm:mt-12 text-center px-4">
           <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto">
-            Al enviar este formulario, aceptas que Infinity Data procese tu información de acuerdo con nuestra
-            <a href="#" className="text-emerald-600 hover:text-emerald-700 font-medium"> Política de Privacidad</a>.
-            Nunca compartiremos tu información con terceros.
+            {t('leadForm.privacyNotice')}
           </p>
         </div>
       </main>

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Infinity, ArrowLeft } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 import Footer from './Footer';
 
 const PrivacyPolicy = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
@@ -21,7 +24,7 @@ const PrivacyPolicy = () => {
               className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2 text-sm sm:text-base"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Volver</span>
+              <span className="hidden sm:inline">{t('common.back')}</span>
             </button>
           </div>
         </div>
@@ -32,10 +35,10 @@ const PrivacyPolicy = () => {
         <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 mb-8 sm:mb-12">
           {/* Title */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
-            Política de Privacidad
+            {t('privacy.title')}
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-gray-500 mb-8 sm:mb-12">
-            Última actualización: 2026
+            {t('privacy.lastUpdated')}
           </p>
 
           {/* Section 1 */}

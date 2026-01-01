@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Infinity, ArrowLeft, Mail, Calendar } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const SuccessScreen = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
@@ -21,7 +24,7 @@ const SuccessScreen = () => {
               className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2 text-sm sm:text-base"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Volver</span>
+              <span className="hidden sm:inline">{t('common.back')}</span>
             </button>
           </div>
         </div>
@@ -39,7 +42,7 @@ const SuccessScreen = () => {
 
           {/* Main Message */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-            ¡Solicitud Enviada!
+            {t('success.title')}
           </h1>
 
           <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 max-w-2xl mx-auto mb-8 sm:mb-12">
@@ -51,12 +54,11 @@ const SuccessScreen = () => {
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-              Su solicitud fue enviada a Infinity Data
+              {t('success.heading')}
             </h2>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed px-4">
-              Hemos recibido tu solicitud correctamente. Nuestro equipo de expertos la revisará
-              y te contactará en las próximas 24 horas con una propuesta personalizada.
+              {t('success.description')}
             </p>
 
             {/* Next Steps */}
@@ -66,25 +68,25 @@ const SuccessScreen = () => {
                   <Mail className="w-6 h-6 text-emerald-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Revisión de solicitud</h3>
-                  <p className="text-gray-600 text-sm">Analizaremos tu caso en detalle</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">{t('success.nextSteps.review.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('success.nextSteps.review.description')}</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-4 text-left">
                 <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Calendar className="w-6 h-6 text-emerald-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Contacto directo</h3>
-                  <p className="text-gray-600 text-sm">Te llamaremos en 24 horas</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">{t('success.nextSteps.contact.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('success.nextSteps.contact.description')}</p>
                 </div>
               </div>
             </div>
 
             {/* Contact Info */}
             <div className="bg-gray-50 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
-              <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">¿Tienes alguna pregunta?</h3>
+              <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">{t('success.questions.title')}</h3>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-2 text-gray-600 text-xs sm:text-sm md:text-base">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                 <a href="mailto:santiagoromero@getinfinitydata.com" className="hover:text-emerald-600 transition-colors break-all">
@@ -99,13 +101,13 @@ const SuccessScreen = () => {
                 to="/"
                 className="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-200 shadow-lg hover:shadow-xl text-center"
               >
-                Volver al inicio
+                {t('success.buttons.backHome')}
               </Link>
               <Link
                 to="/demo"
                 className="w-full sm:w-auto bg-white border-2 border-gray-200 hover:border-emerald-300 text-gray-700 hover:text-emerald-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-200 text-center"
               >
-                Nueva solicitud
+                {t('success.buttons.newRequest')}
               </Link>
             </div>
           </div>
@@ -113,7 +115,7 @@ const SuccessScreen = () => {
           {/* Additional Info */}
           <div className="text-center px-4">
             <p className="text-gray-500 text-sm sm:text-base lg:text-lg">
-              Gracias por confiar en <span className="font-semibold text-emerald-600">Infinity Data</span>
+              {t('success.footer')} <span className="font-semibold text-emerald-600">Infinity Data</span>
             </p>
           </div>
         </div>

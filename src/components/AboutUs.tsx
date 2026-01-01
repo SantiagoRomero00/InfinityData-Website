@@ -1,5 +1,6 @@
 import React from 'react';
 import { Infinity, ArrowLeft, GraduationCap, Award, Zap, Search, Settings, TrendingUp } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 import Footer from './Footer';
 import profileImage from '../../Assets/cropped_pp.jpeg';
 import n8nLogo from '../../Assets/n8n.svg';
@@ -9,6 +10,8 @@ import phantombusterLogo from '../../Assets/phantombuster.svg';
 import instantlyLogo from '../../Assets/instantly.svg';
 
 const AboutUs = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <header className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50">
@@ -19,7 +22,7 @@ const AboutUs = () => {
               className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2 text-sm sm:text-base"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Volver</span>
+              <span className="hidden sm:inline">{t('common.back')}</span>
             </button>
             <div className="flex items-center space-x-2 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
               <div className="relative">
@@ -49,13 +52,13 @@ const AboutUs = () => {
 
             <div className="order-1 lg:order-2">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                Nosotros
+                {t('about.title')}
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8">
-                Soy Santiago, ingeniero en informática y fundador de Infinity Data. Mi misión es transformar empresas mediante automatización inteligente y soluciones de IA que generan resultados medibles.
+                {t('about.bio.paragraph1')}
               </p>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-10">
-                Con formación en ingeniería y experiencia práctica en implementación de sistemas, ayudo a empresas a optimizar procesos, captar leads de forma escalable y construir infraestructuras tecnológicas robustas.
+                {t('about.bio.paragraph2')}
               </p>
 
               <div className="space-y-4">
@@ -66,8 +69,8 @@ const AboutUs = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Ingeniería en Informática</h3>
-                    <p className="text-gray-600 text-sm">Ingeniería en Informática – Universidad Nacional de La Matanza</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{t('about.credentials.education.title')}</h3>
+                    <p className="text-gray-600 text-sm">{t('about.credentials.education.description')}</p>
                   </div>
                 </div>
 
@@ -78,8 +81,8 @@ const AboutUs = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Experto en Automatización</h3>
-                    <p className="text-gray-600 text-sm">Make & n8n</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{t('about.credentials.expertise.title')}</h3>
+                    <p className="text-gray-600 text-sm">{t('about.credentials.expertise.description')}</p>
                   </div>
                 </div>
 
@@ -90,8 +93,8 @@ const AboutUs = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Resultados Comprobados</h3>
-                    <p className="text-gray-600 text-sm">Proyectos exitosos en múltiples industrias</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{t('about.credentials.results.title')}</h3>
+                    <p className="text-gray-600 text-sm">{t('about.credentials.results.description')}</p>
                   </div>
                 </div>
               </div>
@@ -102,7 +105,7 @@ const AboutUs = () => {
         <section className="mb-12 sm:mb-16 md:mb-20">
           <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
-              Dominamos la tecnología líder del mercado
+              {t('about.techStack.title')}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
@@ -133,7 +136,7 @@ const AboutUs = () => {
                 <div className="h-16 flex items-center justify-center mb-4">
                   <div className="text-5xl font-bold text-gray-400 grayscale group-hover:grayscale-0 group-hover:text-emerald-600 group-hover:scale-110 transition-all duration-300">SQL</div>
                 </div>
-                <p className="text-sm text-gray-600 text-center font-medium">Bases de Datos</p>
+                <p className="text-sm text-gray-600 text-center font-medium">{t('about.techStack.databases')}</p>
               </div>
               <div className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
                 <img
@@ -157,16 +160,16 @@ const AboutUs = () => {
 
         <section className="mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
-            Cómo Trabajamos
+            {t('about.howWeWork.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
                 <Search className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">1. Auditoría</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">{t('about.howWeWork.step1.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                Analizamos a fondo tus procesos actuales, identificamos cuellos de botella y oportunidades de automatización que generen el mayor impacto.
+                {t('about.howWeWork.step1.description')}
               </p>
             </div>
 
@@ -174,9 +177,9 @@ const AboutUs = () => {
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
                 <Settings className="w-8 h-8 text-emerald-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">2. Diseño e Implementación</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('about.howWeWork.step2.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                Construimos soluciones personalizadas usando las mejores herramientas del mercado, integrando sistemas y creando flujos robustos.
+                {t('about.howWeWork.step2.description')}
               </p>
             </div>
 
@@ -184,9 +187,9 @@ const AboutUs = () => {
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
                 <TrendingUp className="w-8 h-8 text-emerald-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">3. Optimización Continua</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('about.howWeWork.step3.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                Monitoreamos el rendimiento, ajustamos estrategias y escalamos las soluciones conforme crece tu negocio.
+                {t('about.howWeWork.step3.description')}
               </p>
             </div>
           </div>

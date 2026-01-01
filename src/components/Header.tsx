@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Infinity, Menu, X } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
+import LanguageSwitch from './LanguageSwitch';
 
 const Header = () => {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -91,20 +94,21 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#servicios" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
-              Servicios
+              {t('header.nav.services')}
             </a>
             <a href="#como-funciona" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
-              ¿Cómo trabajamos?
+              {t('header.nav.howWeWork')}
             </a>
             <a href="/nosotros" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
-              Nosotros
+              {t('header.nav.about')}
             </a>
+            <LanguageSwitch />
           </nav>
 
           {/* CTA Button & Mobile Menu Toggle */}
           <div className="flex items-center space-x-2 sm:space-x-4">
             <a href="/demo" className="hidden sm:inline-block bg-gradient-to-r from-emerald-400 to-emerald-200 hover:from-emerald-500 hover:to-emerald-300 text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-semibold text-sm sm:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl">
-              Reservar Demo
+              {t('header.ctaButton')}
             </a>
 
             {/* Mobile Menu Button */}
@@ -127,33 +131,36 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-gray-200/50">
           <nav className="px-4 py-4 space-y-3 bg-white/95 backdrop-blur-md">
+            <div className="flex justify-center mb-2">
+              <LanguageSwitch />
+            </div>
             <a
               href="#servicios"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-gray-700 hover:text-emerald-600 font-medium transition-colors"
             >
-              Servicios
+              {t('header.nav.services')}
             </a>
             <a
               href="#como-funciona"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-gray-700 hover:text-emerald-600 font-medium transition-colors"
             >
-              ¿Cómo trabajamos?
+              {t('header.nav.howWeWork')}
             </a>
             <a
               href="/nosotros"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-gray-700 hover:text-emerald-600 font-medium transition-colors"
             >
-              Nosotros
+              {t('header.nav.about')}
             </a>
             <a
               href="/demo"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-emerald-400 to-emerald-200 hover:from-emerald-500 hover:to-emerald-300 text-white px-6 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg"
             >
-              Reservar Demo
+              {t('header.ctaButton')}
             </a>
           </nav>
         </div>

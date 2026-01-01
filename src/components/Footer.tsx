@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Infinity, Mail, Phone, MapPin, Instagram } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-[#1D1D1F] text-white py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -17,8 +20,7 @@ const Footer = () => {
               <span className="text-xl sm:text-2xl font-bold">Infinity Data</span>
             </div>
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 max-w-md">
-              Transformamos negocios con automatización de IA inteligente.
-              Tu socio estratégico para el crecimiento digital.
+              {t('footer.description')}
             </p>
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
               <div className="flex items-center space-x-2 text-gray-300">
@@ -64,21 +66,21 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Servicios</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">{t('footer.services.title')}</h3>
             <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base">
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">Automatización de Procesos</a></li>
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">Soporte al Cliente</a></li>
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">Planificador de Llamadas</a></li>
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">Integración de Clientes</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.processAutomation')}</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.customerSupport')}</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.callScheduler')}</a></li>
+              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.customerIntegration')}</a></li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Empresa</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">{t('footer.company.title')}</h3>
             <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base">
-              <li><a href="/nosotros" className="hover:text-emerald-400 transition-colors inline-block py-1">Nosotros</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors inline-block py-1">Contacto</a></li>
+              <li><a href="/nosotros" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.company.about')}</a></li>
+              <li><a href="#" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.company.contact')}</a></li>
             </ul>
           </div>
         </div>
@@ -87,11 +89,11 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
-              © 2026 Infinity Data. Todos los derechos reservados.
+              {t('footer.copyright')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-xs sm:text-sm text-gray-400 text-center">
-              <Link to="/privacidad" className="hover:text-emerald-400 transition-colors">Política de Privacidad</Link>
-              <Link to="/terminos" className="hover:text-emerald-400 transition-colors break-words">Términos y Condiciones</Link>
+              <Link to="/privacidad" className="hover:text-emerald-400 transition-colors">{t('footer.privacy')}</Link>
+              <Link to="/terminos" className="hover:text-emerald-400 transition-colors break-words">{t('footer.terms')}</Link>
             </div>
           </div>
         </div>

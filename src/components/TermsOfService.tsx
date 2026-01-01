@@ -1,8 +1,11 @@
 import React from 'react';
 import { Infinity, ArrowLeft } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 import Footer from './Footer';
 
 const TermsOfService = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
@@ -21,7 +24,7 @@ const TermsOfService = () => {
               className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span>Volver</span>
+              <span>{t('common.back')}</span>
             </button>
           </div>
         </div>
@@ -32,10 +35,10 @@ const TermsOfService = () => {
         <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12">
           {/* Title */}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-            Términos y Condiciones del Servicio
+            {t('terms.title')}
           </h1>
           <p className="text-lg text-gray-500 mb-12">
-            (Protección Comercial y Legal)
+            {t('terms.subtitle')}
           </p>
 
           {/* Section 1 */}

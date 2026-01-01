@@ -71,35 +71,38 @@ export const validateEmail = (email: string): boolean => {
 };
 
 // Función para validar formulario completo
-export const validateFormData = (formData: {
-  name: string;
-  email: string;
-  service: string;
-  company: string;
-  problems: string;
-}) => {
+export const validateFormData = (
+  formData: {
+    name: string;
+    email: string;
+    service: string;
+    company: string;
+    problems: string;
+  },
+  t: (key: string) => string
+) => {
   const errors: Record<string, string> = {};
 
   if (!formData.name.trim()) {
-    errors.name = 'El nombre es requerido';
+    errors.name = t('leadForm.validation.nameRequired');
   }
 
   if (!formData.email.trim()) {
-    errors.email = 'El email es requerido';
+    errors.email = t('leadForm.validation.emailRequired');
   } else if (!validateEmail(formData.email)) {
-    errors.email = 'Por favor ingresa un email válido';
+    errors.email = t('leadForm.validation.emailInvalid');
   }
 
   if (!formData.service) {
-    errors.service = 'Por favor selecciona un servicio';
+    errors.service = t('leadForm.validation.serviceRequired');
   }
 
   if (!formData.company.trim()) {
-    errors.company = 'El nombre de la empresa es requerido';
+    errors.company = t('leadForm.validation.companyRequired');
   }
 
   if (!formData.problems.trim()) {
-    errors.problems = 'Por favor describe los problemas que buscas resolver';
+    errors.problems = t('leadForm.validation.problemsRequired');
   }
 
   return {

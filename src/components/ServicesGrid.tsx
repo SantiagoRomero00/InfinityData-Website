@@ -1,13 +1,16 @@
 import React from 'react';
 import { Brain, MessageSquare, Calendar, Users } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const ServicesGrid = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="servicios" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-600 mb-4 sm:mb-6">
-            Servicios
+            {t('services.title')}
           </h2>
         </div>
 
@@ -20,22 +23,22 @@ const ServicesGrid = () => {
               </div>
 
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-sm">
-                Automatización de Procesos
+                {t('services.processAutomation.title')}
               </h3>
 
               <p className="text-base sm:text-lg lg:text-xl text-white/90 font-normal mb-8 sm:mb-12 leading-relaxed">
-                Reduci el tiempo de ejecución de tareas con tan solo un click
+                {t('services.processAutomation.description')}
               </p>
 
               <div className="mt-auto mb-6 sm:mb-8">
                 <a href="/demo?service=Automatización de procesos" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
-                  Contratar Servicio
+                  {t('services.processAutomation.button')}
                 </a>
               </div>
             </div>
 
             <div className="text-xs sm:text-sm text-white/80 font-medium relative z-10">
-              Evitamos errores humanos
+              {t('services.processAutomation.tagline')}
             </div>
 
             {/* Abstract 3D Visual */}
@@ -55,22 +58,22 @@ const ServicesGrid = () => {
               </div>
 
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-sm">
-                Soporte al Cliente
+                {t('services.customerSupport.title')}
               </h3>
 
               <p className="text-base sm:text-lg lg:text-xl text-white/90 font-normal mb-8 sm:mb-12 leading-relaxed">
-                Brinda atención a tus usuarios 24/7 con nuestro asistente virtual
+                {t('services.customerSupport.description')}
               </p>
 
               <div className="mt-auto mb-6 sm:mb-8">
                 <a href="/demo?service=Soporte al cliente" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
-                  Contratar Servicio
+                  {t('services.customerSupport.button')}
                 </a>
               </div>
             </div>
 
             <div className="text-xs sm:text-sm text-white/80 font-medium relative z-10">
-              Soporte continuo y efectivo
+              {t('services.customerSupport.tagline')}
             </div>
 
             {/* Abstract 3D Visual */}
@@ -93,22 +96,22 @@ const ServicesGrid = () => {
               </div>
 
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-900 mb-4 sm:mb-6 leading-tight drop-shadow-sm">
-                Planificador de Llamadas
+                {t('services.callScheduler.title')}
               </h3>
 
               <p className="text-base sm:text-lg lg:text-xl text-emerald-800 font-normal mb-8 sm:mb-12 leading-relaxed">
-                Convierte leads en reuniones automáticamente
+                {t('services.callScheduler.description')}
               </p>
 
               <div className="mt-auto mb-6 sm:mb-8">
                 <a href="/demo?service=Planificador de llamadas" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
-                  Contratar Servicio
+                  {t('services.callScheduler.button')}
                 </a>
               </div>
             </div>
 
             <div className="text-xs sm:text-sm text-emerald-800 font-medium relative z-10">
-              Agenda automática y confiable
+              {t('services.callScheduler.tagline')}
             </div>
 
             {/* Abstract 3D Visual */}
@@ -131,22 +134,22 @@ const ServicesGrid = () => {
               </div>
 
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-900 mb-4 sm:mb-6 leading-tight drop-shadow-sm">
-                Integración de Clientes
+                {t('services.customerIntegration.title')}
               </h3>
 
               <p className="text-base sm:text-lg lg:text-xl text-emerald-800 font-normal mb-8 sm:mb-12 leading-relaxed">
-                Integra y gestiona clientes sin complicaciones
+                {t('services.customerIntegration.description')}
               </p>
 
               <div className="mt-auto mb-6 sm:mb-8">
                 <a href="/demo?service=Integración de clientes" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
-                  Contratar Servicio
+                  {t('services.customerIntegration.button')}
                 </a>
               </div>
             </div>
 
             <div className="text-xs sm:text-sm text-emerald-700 font-medium relative z-10">
-              Implementación ágil y segura
+              {t('services.customerIntegration.tagline')}
             </div>
 
             {/* Abstract 3D Visual */}
