@@ -21,15 +21,15 @@ const LanguageSwitch: React.FC<LanguageSwitchProps> = ({
   return (
     <button
       onClick={toggleLanguage}
-      className={`font-medium text-xs md:text-sm flex items-center space-x-1.5 md:space-x-2 min-h-[44px] min-w-[44px] transition-colors duration-300 ${textColor} ${hoverColor} ${className}`}
+      className={`font-medium text-xs md:text-sm flex flex-col items-center justify-center gap-0.5 min-h-[44px] min-w-[44px] transition-colors duration-300 ${textColor} ${hoverColor} ${className}`}
       aria-label="Switch language"
     >
-      <span>{language === 'es' ? 'ES' : 'US'}</span>
       <img
         src={language === 'es' ? '/assets/flags/spain.svg' : '/assets/flags/usa.svg'}
         alt={language === 'es' ? 'Spain flag' : 'USA flag'}
-        className="w-4 h-4 md:w-5 md:h-5 rounded"
+        className="w-5 h-5 md:w-6 md:h-6 rounded shadow-sm"
       />
+      <span className="text-[10px] md:text-xs font-semibold tracking-wide">{language === 'es' ? 'ES' : 'EN'}</span>
     </button>
   );
 };
