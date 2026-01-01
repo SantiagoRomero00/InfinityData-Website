@@ -239,5 +239,18 @@ export default {
   terms: {
     title: "Terms and Conditions of Service",
     subtitle: "(Commercial and Legal Protection)"
+  },
+  contactModal: {
+    title: "Let's talk about your project!",
+    subtitle: "We're ready to transform your business with intelligent automation.",
+    email: {
+      label: "Email us",
+      address: "santiagoromero@getinfinitydata.com"
+    },
+    whatsapp: {
+      label: "Chat on WhatsApp",
+      message: "Hi Santi, I was looking at the Infinity Data website. I would like to know how AI can help me save time in my company.\nGracias"
+    },
+    close: "Close"
   }
 };

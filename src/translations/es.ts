@@ -239,5 +239,18 @@ export default {
   terms: {
     title: "Términos y Condiciones del Servicio",
     subtitle: "(Protección Comercial y Legal)"
+  },
+  contactModal: {
+    title: "¡Hablemos de tu proyecto!",
+    subtitle: "Estamos listos para transformar tu negocio con automatización inteligente.",
+    email: {
+      label: "Escríbenos por email",
+      address: "santiagoromero@getinfinitydata.com"
+    },
+    whatsapp: {
+      label: "Chatea por WhatsApp",
+      message: "Hola Santi, estuve viendo la web de Infinity Data. Me gustaría saber cómo la IA puede ayudarme a ahorrar tiempo en mi empresa.\nGracias"
+    },
+    close: "Cerrar"
   }
 };
