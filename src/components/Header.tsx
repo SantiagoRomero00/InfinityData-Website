@@ -164,7 +164,7 @@ const Header = () => {
 
       {/* Fixed Language Switcher */}
       <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
-        <LanguageSwitch variant={currentSection === 'hero' ? 'light' : 'dark'} />
+        <LanguageSwitch textColor={styles.text} hoverColor={styles.textHover} />
       </div>
     </header>
   );
