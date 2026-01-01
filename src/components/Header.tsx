@@ -81,14 +81,34 @@ const Header = () => {
   return (
     <header className={`${styles.bg} backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b ${styles.border} transition-all duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
+        <div className="grid grid-cols-3 md:flex items-center md:justify-between">
+          {/* Mobile Menu Button - Left on Mobile */}
+          <div className="flex items-center justify-start md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <X className={`w-6 h-6 ${styles.logo}`} />
+              ) : (
+                <Menu className={`w-6 h-6 ${styles.logo}`} />
+              )}
+            </button>
+          </div>
+
+          {/* Logo - Centered on Mobile, Left on Desktop */}
+          <div className="flex items-center space-x-2 justify-center md:justify-start">
             <div className="relative">
               <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
             </div>
             <span className={`text-base sm:text-xl font-bold ${styles.logo} transition-colors duration-300`}>Infinity Data</span>
+          </div>
+
+          {/* Language Switcher - Right on Mobile, Hidden on Desktop (shown via fixed positioning) */}
+          <div className="flex items-center justify-end md:hidden">
+            <LanguageSwitch textColor={styles.text} hoverColor={styles.textHover} />
           </div>
 
           {/* Desktop Navigation */}
@@ -104,24 +124,11 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* CTA Button & Mobile Menu Toggle */}
-          <div className="flex items-center space-x-2 sm:space-x-4">
-            <a href="/demo" className="hidden sm:inline-block bg-gradient-to-r from-emerald-400 to-emerald-200 hover:from-emerald-500 hover:to-emerald-300 text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-semibold text-sm sm:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl">
+          {/* CTA Button - Desktop Only */}
+          <div className="hidden md:flex items-center space-x-4">
+            <a href="/demo" className="bg-gradient-to-r from-emerald-400 to-emerald-200 hover:from-emerald-500 hover:to-emerald-300 text-white px-6 py-2.5 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl">
               {t('header.ctaButton')}
             </a>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <X className={`w-6 h-6 ${styles.logo}`} />
-              ) : (
-                <Menu className={`w-6 h-6 ${styles.logo}`} />
-              )}
-            </button>
           </div>
         </div>
       </div>
@@ -162,8 +169,8 @@ const Header = () => {
         </div>
       )}
 
-      {/* Fixed Language Switcher */}
-      <div className="fixed top-4 left-4 md:top-6 md:left-auto md:right-6 z-40">
+      {/* Fixed Language Switcher - Desktop Only */}
+      <div className="hidden md:block fixed top-6 right-6 z-40">
         <LanguageSwitch textColor={styles.text} hoverColor={styles.textHover} />
       </div>
     </header>
