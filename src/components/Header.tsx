@@ -103,7 +103,7 @@ const Header = () => {
               <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
             </div>
-            <span className={`text-base sm:text-xl font-bold ${styles.logo} transition-colors duration-300`}>Infinity Data</span>
+            <span className={`text-base sm:text-xl font-bold ${styles.logo} transition-colors duration-300 whitespace-nowrap`}>Infinity Data</span>
           </div>
 
           {/* Language Switcher - Right on Mobile, Hidden on Desktop (shown via fixed positioning) */}
