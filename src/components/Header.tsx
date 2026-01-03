@@ -81,9 +81,9 @@ const Header = () => {
   return (
     <header className={`${styles.bg} backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b ${styles.border} transition-all duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-        <div className="grid grid-cols-3 lg:flex items-center lg:justify-between">
+        <div className="grid grid-cols-3 xl:flex items-center xl:justify-between">
           {/* Mobile Menu Button - Left on Mobile */}
-          <div className="flex items-center justify-start lg:hidden">
+          <div className="flex items-center justify-start xl:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2"
@@ -98,7 +98,7 @@ const Header = () => {
           </div>
 
           {/* Logo - Centered on Mobile, Left on Desktop */}
-          <div className="flex items-center space-x-2 justify-center lg:justify-start">
+          <div className="flex items-center space-x-2 justify-center xl:justify-start">
             <div className="relative">
               <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
@@ -107,12 +107,12 @@ const Header = () => {
           </div>
 
           {/* Language Switcher - Right on Mobile, Hidden on Desktop (shown via fixed positioning) */}
-          <div className="flex items-center justify-end lg:hidden">
+          <div className="flex items-center justify-end xl:hidden">
             <LanguageSwitch textColor={styles.text} hoverColor={styles.textHover} />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden xl:flex items-center space-x-8 shrink-0">
             <a href="#servicios" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
               {t('header.nav.services')}
             </a>
@@ -125,8 +125,8 @@ const Header = () => {
           </nav>
 
           {/* CTA Button - Desktop Only */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <a href="/demo" className="bg-gradient-to-r from-emerald-400 to-emerald-200 hover:from-emerald-500 hover:to-emerald-300 text-white px-6 py-2.5 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl">
+          <div className="hidden xl:flex items-center gap-4 shrink-0">
+            <a href="/demo" className="shrink-0 bg-gradient-to-r from-emerald-400 to-emerald-200 hover:from-emerald-500 hover:to-emerald-300 text-white px-6 py-2.5 rounded-full font-semibold text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl">
               {t('header.ctaButton')}
             </a>
           </div>
@@ -135,7 +135,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-gray-200/50">
+        <div className="xl:hidden border-t border-gray-200/50">
           <nav className="px-4 py-4 space-y-3 bg-white/95 backdrop-blur-md">
             <a
               href="#servicios"
@@ -170,7 +170,7 @@ const Header = () => {
       )}
 
       {/* Fixed Language Switcher - Desktop Only */}
-      <div className="hidden lg:block fixed top-6 right-6 z-40">
+      <div className="hidden xl:block fixed top-6 right-6 z-40 shrink-0">
         <LanguageSwitch textColor={styles.text} hoverColor={styles.textHover} />
       </div>
     </header>
