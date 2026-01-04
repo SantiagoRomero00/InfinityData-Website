@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Infinity, Menu, X } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { Infinity, Menu, X, ArrowLeft } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
 import LanguageSwitch from './LanguageSwitch';
 
 const Header = () => {
   const { t } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isHomepage = location.pathname === '/';
+
+  const handleBack = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -115,6 +120,15 @@ const Header = () => {
 
           {/* Logo - Centered on Mobile, Left on Desktop */}
           <div className="flex items-center space-x-2 justify-center xl:justify-start">
+            {!isHomepage && (
+              <button
+                onClick={handleBack}
+                className={`p-2 ${styles.logo} ${styles.textHover} transition-colors duration-300 mr-2 hover:bg-white/10 rounded-lg`}
+                aria-label={t('common.back')}
+              >
+                <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+            )}
             <div className="relative">
               <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
