@@ -1,5 +1,5 @@
-import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { useTranslation } from './hooks/useTranslation';
 import Layout from './components/Layout';
@@ -33,15 +33,33 @@ const LoadingSpinner = () => {
   );
 };
 
-const HomePage = () => (
-  <>
-    <Hero />
-    <ServicesGrid />
-    <HowItWorks />
-    <FinalCTA />
-    <Footer />
-  </>
-);
+const HomePage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.substring(1);
+      const timer = setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
+
+  return (
+    <>
+      <Hero />
+      <ServicesGrid />
+      <HowItWorks />
+      <FinalCTA />
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   console.log('🚀 App component rendering...');

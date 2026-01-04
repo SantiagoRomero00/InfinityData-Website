@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Infinity, Menu, X, ArrowLeft } from 'lucide-react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
 import LanguageSwitch from './LanguageSwitch';
 
@@ -16,6 +16,18 @@ const Header = () => {
 
   const handleBack = () => {
     navigate(-1);
+  };
+
+  const handleNavigation = (sectionId: string) => {
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      navigate(`/#${sectionId}`);
+    }
+    setMobileMenuOpen(false);
   };
 
   useEffect(() => {
@@ -129,11 +141,13 @@ const Header = () => {
                 <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             )}
-            <div className="relative">
-              <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
-            </div>
-            <span className={`text-base sm:text-xl font-bold ${styles.logo} transition-colors duration-300 whitespace-nowrap`}>Infinity Data</span>
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="relative">
+                <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
+              </div>
+              <span className={`text-base sm:text-xl font-bold ${styles.logo} transition-colors duration-300 whitespace-nowrap`}>Infinity Data</span>
+            </Link>
           </div>
 
           {/* Language Switcher - Right on Mobile, Hidden on Desktop (shown via fixed positioning) */}
@@ -143,15 +157,15 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center space-x-8 shrink-0">
-            <a href="#servicios" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
+            <button onClick={() => handleNavigation('servicios')} className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
               {t('header.nav.services')}
-            </a>
-            <a href="#como-funciona" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
+            </button>
+            <button onClick={() => handleNavigation('como-funciona')} className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
               {t('header.nav.howWeWork')}
-            </a>
-            <a href="/nosotros" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
+            </button>
+            <Link to="/nosotros" className={`${styles.text} ${styles.textHover} transition-colors font-medium duration-300`}>
               {t('header.nav.about')}
-            </a>
+            </Link>
           </nav>
 
           {/* CTA Button - Desktop Only */}
@@ -167,34 +181,32 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className={`xl:hidden border-t ${isHomepage ? 'border-gray-200/50' : 'border-gray-800'}`}>
           <nav className={`px-4 py-4 space-y-3 backdrop-blur-md ${isHomepage ? 'bg-white/95' : 'bg-gray-950/95'}`}>
-            <a
-              href="#servicios"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 font-medium transition-colors ${isHomepage ? 'text-gray-700 hover:text-emerald-600' : 'text-white hover:text-emerald-400'}`}
+            <button
+              onClick={() => handleNavigation('servicios')}
+              className={`block py-2 font-medium transition-colors w-full text-left ${isHomepage ? 'text-gray-700 hover:text-emerald-600' : 'text-white hover:text-emerald-400'}`}
             >
               {t('header.nav.services')}
-            </a>
-            <a
-              href="#como-funciona"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 font-medium transition-colors ${isHomepage ? 'text-gray-700 hover:text-emerald-600' : 'text-white hover:text-emerald-400'}`}
+            </button>
+            <button
+              onClick={() => handleNavigation('como-funciona')}
+              className={`block py-2 font-medium transition-colors w-full text-left ${isHomepage ? 'text-gray-700 hover:text-emerald-600' : 'text-white hover:text-emerald-400'}`}
             >
               {t('header.nav.howWeWork')}
-            </a>
-            <a
-              href="/nosotros"
+            </button>
+            <Link
+              to="/nosotros"
               onClick={() => setMobileMenuOpen(false)}
               className={`block py-2 font-medium transition-colors ${isHomepage ? 'text-gray-700 hover:text-emerald-600' : 'text-white hover:text-emerald-400'}`}
             >
               {t('header.nav.about')}
-            </a>
-            <a
-              href="/demo"
+            </Link>
+            <Link
+              to="/demo"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-emerald-400 to-emerald-200 hover:from-emerald-500 hover:to-emerald-300 text-white px-6 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg"
             >
               {t('header.ctaButton')}
-            </a>
+            </Link>
           </nav>
         </div>
       )}
