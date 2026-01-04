@@ -153,7 +153,7 @@ export default {
     },
     contactInfo: {
       title: "Need help?",
-      description: "Our team is available to answer any questions about our services.",
+      description: "The Infinity Data team is always available to answer any questions about our services.",
       email: "Email",
       support: "Support",
       liveChat: "Live chat available"
