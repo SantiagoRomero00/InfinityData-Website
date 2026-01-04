@@ -6,7 +6,7 @@ export default {
   header: {
     nav: {
       services: "Services",
-      howWeWork: "How We Work",
+      howWeWork: "How we Work?",
       about: "About Us"
     },
     ctaButton: "Book Demo"
@@ -47,7 +47,7 @@ export default {
     }
   },
   howItWorks: {
-    title: "How We Work",
+    title: "How we Work?",
     subtitle: "A simple and proven process to transform your business with AI",
     steps: {
       discover: {
