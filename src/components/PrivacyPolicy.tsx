@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
               {t('privacy.section1.description')}
             </p>
             <ul className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
-              {t('privacy.section1.items').map((item: any, index: number) => (
+              {(Array.isArray(t('privacy.section1.items')) ? t('privacy.section1.items') : []).map((item: any, index: number) => (
                 <li key={index} className="flex">
                   <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
                   <span className="break-words"><strong>{item.label}</strong> {item.text}</span>
@@ -44,7 +44,7 @@ const PrivacyPolicy = () => {
               {t('privacy.section2.description')}
             </p>
             <ul className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
-              {t('privacy.section2.items').map((item: string, index: number) => (
+              {(Array.isArray(t('privacy.section2.items')) ? t('privacy.section2.items') : []).map((item: string, index: number) => (
                 <li key={index} className="flex">
                   <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
                   <span className="break-words">{item}</span>

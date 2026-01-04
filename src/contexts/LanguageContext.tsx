@@ -7,7 +7,7 @@ export type Language = 'es' | 'en';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => any;
 }
 
 const translations = {
@@ -36,7 +36,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     setLanguageState(lang);
   };
 
-  const t = (key: string): string => {
+  const t = (key: string): any => {
     const keys = key.split('.');
     let value: any = translations[language];
 
@@ -57,7 +57,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       }
     }
 
-    return typeof value === 'string' ? value : key;
+    return value !== undefined ? value : key;
   };
 
   return (

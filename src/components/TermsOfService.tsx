@@ -33,7 +33,7 @@ const TermsOfService = () => {
               2. {t('terms.section2.title')}
             </h2>
             <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
-              {t('terms.section2.items').map((item: any, index: number) => (
+              {(Array.isArray(t('terms.section2.items')) ? t('terms.section2.items') : []).map((item: any, index: number) => (
                 <li key={index} className="flex">
                   <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
                   <div className="break-words">
@@ -50,7 +50,7 @@ const TermsOfService = () => {
               3. {t('terms.section3.title')}
             </h2>
             <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
-              {t('terms.section3.items').map((item: any, index: number) => (
+              {(Array.isArray(t('terms.section3.items')) ? t('terms.section3.items') : []).map((item: any, index: number) => (
                 <li key={index} className="flex">
                   <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
                   <div className="break-words">
@@ -67,7 +67,7 @@ const TermsOfService = () => {
               4. {t('terms.section4.title')}
             </h2>
             <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
-              {t('terms.section4.items').map((item: any, index: number) => (
+              {(Array.isArray(t('terms.section4.items')) ? t('terms.section4.items') : []).map((item: any, index: number) => (
                 <li key={index} className="flex">
                   <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
                   <div className="break-words">
