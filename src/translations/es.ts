@@ -201,7 +201,7 @@ export default {
     credentials: {
       education: {
         title: "Ingeniería en Informática",
-        description: "Ingeniería en Informática – Universidad Nacional de La Matanza"
+        description: "Universidad Nacional de La Matanza"
       },
       expertise: {
         title: "Experto en Automatización",
