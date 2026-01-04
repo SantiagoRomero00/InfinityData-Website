@@ -166,11 +166,6 @@ export default {
       serviceRequired: "Please select a service",
       companyRequired: "Company name is required",
       problemsRequired: "Please describe the problems you are looking to solve"
-    },
-    contact: {
-      emailTitle: "Email us",
-      emailAddress: "santiagoromero@getinfinitydata.com",
-      whatsappTitle: "Chat on WhatsApp"
     }
   },
   success: {

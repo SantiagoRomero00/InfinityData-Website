@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { ArrowRight, Shield, CheckCircle, AlertCircle, Loader2, Mail, MessageCircle } from 'lucide-react';
+import { ArrowRight, Shield, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { submitLeadForm, validateFormData } from '../utils/formSubmission';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -348,36 +348,32 @@ const LeadCaptureForm = () => {
               </div>
             </div>
 
-            {/* Contact Options */}
-            <div className="space-y-4">
-              {/* Email Contact Card */}
-              <a
-                href={`mailto:${t('leadForm.contact.emailAddress')}`}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all p-6 flex items-center space-x-4 group"
-              >
-                <div className="bg-emerald-50 text-emerald-600 p-3 rounded-full flex-shrink-0">
-                  <Mail className="w-6 h-6" />
+            {/* Contact Info */}
+            <div className="bg-gradient-to-br from-emerald-600 to-emerald-500 rounded-3xl shadow-xl p-6 sm:p-8 lg:p-12 text-white">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t('leadForm.contactInfo.title')}</h3>
+              <p className="text-emerald-100 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                {t('leadForm.contactInfo.description')}
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">📧</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-white font-semibold">{t('leadForm.contactInfo.email')}</p>
+                    <p className="text-emerald-100 text-sm break-all">infinitydata.team@gmail.com</p>
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="font-bold text-gray-900 mb-1">{t('leadForm.contact.emailTitle')}</h4>
-                  <p className="text-emerald-600 text-sm break-all">{t('leadForm.contact.emailAddress')}</p>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">💬</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-white font-semibold">{t('leadForm.contactInfo.support')}</p>
+                    <p className="text-emerald-100 text-sm">{t('leadForm.contactInfo.liveChat')}</p>
+                  </div>
                 </div>
-              </a>
-
-              {/* WhatsApp Contact Card */}
-              <a
-                href="https://wa.me/5491167461340?text=Hola%20Santi%2C%20estuve%20viendo%20la%20web%20de%20Infinity%20Data.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20la%20IA%20puede%20ayudarme%20a%20ahorrar%20tiempo%20en%20mi%20empresa.%0AGracias"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all p-6 flex items-center space-x-4 group"
-              >
-                <div className="bg-emerald-50 text-emerald-600 p-3 rounded-full flex-shrink-0">
-                  <MessageCircle className="w-6 h-6" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="font-bold text-gray-900">{t('leadForm.contact.whatsappTitle')}</h4>
-                </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
