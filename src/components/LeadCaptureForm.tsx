@@ -368,7 +368,7 @@ const LeadCaptureForm = () => {
                   </div>
                 </a>
                 <a
-                  href="https://wa.me/5491126227070"
+                  href="https://wa.me/5491155025482"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white rounded-2xl p-4 flex items-center space-x-4 hover:shadow-lg transition-shadow duration-200"
