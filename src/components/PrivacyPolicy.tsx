@@ -20,84 +20,68 @@ const PrivacyPolicy = () => {
           {/* Section 1 */}
           <section className="mb-8 sm:mb-12">
             <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
-              1. Información que Recopilamos
+              1. {t('privacy.section1.title')}
             </h2>
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4 break-words">
-              Para la correcta ejecución de nuestros servicios de automatización e inteligencia artificial, podemos recopilar y procesar los siguientes tipos de datos:
+              {t('privacy.section1.description')}
             </p>
             <ul className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
-              <li className="flex">
-                <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
-                <span className="break-words"><strong>Datos de Identificación:</strong> Nombre, apellido, dirección de correo electrónico, teléfono y cargo profesional.</span>
-              </li>
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <span><strong>Datos Técnicos y de Automatización:</strong> Credenciales de API (API Keys), Tokens de acceso, Webhooks y estructuras de datos (JSON) necesarios para la integración de aplicaciones.</span>
-              </li>
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <span><strong>Datos de Navegación:</strong> Dirección IP, tipo de navegador y cookies técnicas necesarias para el funcionamiento del sitio.</span>
-              </li>
+              {t('privacy.section1.items').map((item: any, index: number) => (
+                <li key={index} className="flex">
+                  <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
+                  <span className="break-words"><strong>{item.label}</strong> {item.text}</span>
+                </li>
+              ))}
             </ul>
           </section>
 
           {/* Section 2 */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              2. Finalidad del Tratamiento
+          <section className="mb-8 sm:mb-12">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              2. {t('privacy.section2.title')}
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              De conformidad con la Ley 25.326, se informa que la finalidad de la recolección de datos es:
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4 break-words">
+              {t('privacy.section2.description')}
             </p>
-            <ul className="space-y-3 text-gray-700 leading-relaxed ml-6">
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <span>Diseñar, implementar y mantener flujos de trabajo automatizados (Workflows) en plataformas como n8n y Make.</span>
-              </li>
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <span>Gestionar campañas de captación de leads y enriquecimiento de datos a solicitud del cliente.</span>
-              </li>
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <span>Procesar la facturación y cobranza de servicios.</span>
-              </li>
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <span>Garantizar la seguridad de las integraciones activas.</span>
-              </li>
+            <ul className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
+              {t('privacy.section2.items').map((item: string, index: number) => (
+                <li key={index} className="flex">
+                  <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
+                  <span className="break-words">{item}</span>
+                </li>
+              ))}
             </ul>
           </section>
 
           {/* Section 3 */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              3. Integraciones con Terceros (Cesión de Datos)
+          <section className="mb-8 sm:mb-12">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              3. {t('privacy.section3.title')}
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              El Cliente reconoce y acepta que, para la prestación del servicio, Infinity Data actúa como integrador tecnológico. Ciertos datos pueden ser procesados a través de servidores de proveedores externos internacionales, incluyendo: OpenAI, Instantly.ai, PhantomBuster, Make.com y n8n. Infinity Data se compromete a utilizar únicamente proveedores que cumplan con estándares internacionales de seguridad de la información.
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
+              {t('privacy.section3.description')}
             </p>
           </section>
 
           {/* Section 4 */}
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              4. Derechos del Titular de los Datos
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              4. {t('privacy.section4.title')}
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el artículo 14, inciso 3 de la Ley Nº 25.326.
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4 break-words">
+              {t('privacy.section4.paragraph1')}
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Para ejercer los derechos de acceso, rectificación y supresión, envíe una solicitud a{' '}
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4 break-words">
+              {t('privacy.section4.paragraph2')}{' '}
               <a
-                href="mailto:infinitydata.team@gmail.com"
+                href={`mailto:${t('privacy.section4.email')}`}
                 className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors"
               >
-                infinitydata.team@gmail.com
+                {t('privacy.section4.email')}
               </a>.
             </p>
-            <p className="text-gray-700 leading-relaxed">
-              La Dirección Nacional de Protección de Datos Personales, órgano de control de la Ley Nº 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales.
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
+              {t('privacy.section4.paragraph3')}
             </p>
           </section>
         </div>

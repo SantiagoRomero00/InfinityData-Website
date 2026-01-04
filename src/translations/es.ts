@@ -234,11 +234,105 @@ export default {
   },
   privacy: {
     title: "Política de Privacidad",
-    lastUpdated: "Última actualización: 2026"
+    lastUpdated: "Última actualización: 2026",
+    section1: {
+      title: "Información que Recopilamos",
+      description: "Para la correcta ejecución de nuestros servicios de automatización e inteligencia artificial, podemos recopilar y procesar los siguientes tipos de datos:",
+      items: [
+        {
+          label: "Datos de Identificación:",
+          text: "Nombre, apellido, dirección de correo electrónico, teléfono y cargo profesional."
+        },
+        {
+          label: "Datos Técnicos y de Automatización:",
+          text: "Credenciales de API (API Keys), Tokens de acceso, Webhooks y estructuras de datos (JSON) necesarios para la integración de aplicaciones."
+        },
+        {
+          label: "Datos de Navegación:",
+          text: "Dirección IP, tipo de navegador y cookies técnicas necesarias para el funcionamiento del sitio."
+        }
+      ]
+    },
+    section2: {
+      title: "Finalidad del Tratamiento",
+      description: "De conformidad con la Ley 25.326, se informa que la finalidad de la recolección de datos es:",
+      items: [
+        "Diseñar, implementar y mantener flujos de trabajo automatizados (Workflows) en plataformas como n8n y Make.",
+        "Gestionar campañas de captación de leads y enriquecimiento de datos a solicitud del cliente.",
+        "Procesar la facturación y cobranza de servicios.",
+        "Garantizar la seguridad de las integraciones activas."
+      ]
+    },
+    section3: {
+      title: "Integraciones con Terceros (Cesión de Datos)",
+      description: "El Cliente reconoce y acepta que, para la prestación del servicio, Infinity Data actúa como integrador tecnológico. Ciertos datos pueden ser procesados a través de servidores de proveedores externos internacionales, incluyendo: OpenAI, Instantly.ai, PhantomBuster, Make.com y n8n. Infinity Data se compromete a utilizar únicamente proveedores que cumplan con estándares internacionales de seguridad de la información."
+    },
+    section4: {
+      title: "Derechos del Titular de los Datos",
+      paragraph1: "El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el artículo 14, inciso 3 de la Ley Nº 25.326.",
+      paragraph2: "Para ejercer los derechos de acceso, rectificación y supresión, envíe una solicitud a",
+      email: "infinitydata.team@gmail.com",
+      paragraph3: "La Dirección Nacional de Protección de Datos Personales, órgano de control de la Ley Nº 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales."
+    }
   },
   terms: {
     title: "Términos y Condiciones del Servicio",
-    subtitle: "(Protección Comercial y Legal)"
+    subtitle: "(Protección Comercial y Legal)",
+    section1: {
+      title: "Aceptación de los Términos",
+      description: "Al contratar los servicios de Infinity Data (en adelante, \"El Prestador\"), el Cliente acepta los presentes términos y condiciones, los cuales rigen el uso de nuestros servicios de consultoría, desarrollo de automatizaciones y mantenimiento."
+    },
+    section2: {
+      title: "Descripción del Servicio y Período de Prueba",
+      items: [
+        {
+          label: "Alcance:",
+          text: "Infinity Data provee servicios de automatización de procesos digitales, integración de APIs y asistentes virtuales."
+        },
+        {
+          label: "Período de Prueba:",
+          text: "Se ofrecerá un período de prueba limitado para verificar el correcto funcionamiento de los flujos automatizados. Las condiciones específicas (duración, límite de ejecuciones o volumen de datos) serán comunicadas por escrito en la propuesta comercial enviada al Cliente. Una vez finalizado dicho período o alcanzado el límite estipulado, la continuación del uso del servicio implica la aceptación total de la funcionalidad entregada y la conformidad para la facturación correspondiente."
+        }
+      ]
+    },
+    section3: {
+      title: "Limitación de Responsabilidad",
+      items: [
+        {
+          label: "Dependencia de Terceros:",
+          text: "El Cliente comprende que las automatizaciones dependen de la disponibilidad y funcionamiento de APIs de terceros (ej. Google, Meta, OpenAI, CRMs). El Prestador no será responsable por interrupciones del servicio, pérdida de datos o fallos causados por cambios en las políticas, caídas de servidores o actualizaciones de API de estas plataformas externas."
+        },
+        {
+          label: "Uso de Leads:",
+          text: "Es responsabilidad exclusiva del Cliente asegurar que el uso de los datos obtenidos (envío de correos en frío, almacenamiento) cumpla con las leyes vigentes."
+        }
+      ]
+    },
+    section4: {
+      title: "Propiedad Intelectual",
+      items: [
+        {
+          label: "Del Cliente:",
+          text: "El Cliente conserva la propiedad de todos los datos y credenciales suministrados."
+        },
+        {
+          label: "Del Prestador:",
+          text: "La lógica de automatización, scripts personalizados y estructuras JSON desarrolladas por Infinity Data son propiedad intelectual del Prestador. Se otorga al Cliente una licencia de uso no exclusiva e intransferible tras el pago total del servicio."
+        }
+      ]
+    },
+    section5: {
+      title: "Confidencialidad",
+      description: "Ambas partes acuerdan mantener la estricta confidencialidad de toda la información comercial, técnica y financiera compartida. Infinity Data se compromete a no compartir, vender ni divulgar las API Keys o secretos comerciales del Cliente."
+    },
+    section6: {
+      title: "Pagos y Cancelación",
+      description: "Los servicios recurrentes (Mantenimiento) se abonan por adelantado del 1 al 10 de cada mes. La cancelación de servicios recurrentes requiere un preaviso mínimo de 30 días. Los costos de suscripción a herramientas de terceros (software SaaS) corren por cuenta exclusiva del Cliente."
+    },
+    section7: {
+      title: "Ley Aplicable y Jurisdicción",
+      description: "Estos términos se rigen por las leyes de la República Argentina. Para cualquier controversia derivada de la interpretación o ejecución de estos términos, las partes se someten a la jurisdicción de los Tribunales Ordinarios con asiento en la Ciudad Autónoma de Buenos Aires, renunciando a cualquier otro fuero o jurisdicción."
+    }
   },
   contactModal: {
     title: "¡Hablemos de tu proyecto!",

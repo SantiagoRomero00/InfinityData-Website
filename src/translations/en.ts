@@ -234,11 +234,105 @@ export default {
   },
   privacy: {
     title: "Privacy Policy",
-    lastUpdated: "Last updated: 2026"
+    lastUpdated: "Last updated: 2026",
+    section1: {
+      title: "Information We Collect",
+      description: "For the proper execution of our automation and artificial intelligence services, we may collect and process the following types of data:",
+      items: [
+        {
+          label: "Identification Data:",
+          text: "Name, surname, email address, phone number, and professional title."
+        },
+        {
+          label: "Technical and Automation Data:",
+          text: "API credentials (API Keys), access tokens, webhooks, and data structures (JSON) necessary for application integration."
+        },
+        {
+          label: "Browsing Data:",
+          text: "IP address, browser type, and technical cookies necessary for site functionality."
+        }
+      ]
+    },
+    section2: {
+      title: "Purpose of Processing",
+      description: "In accordance with Law 25.326, we inform that the purpose of data collection is:",
+      items: [
+        "To design, implement, and maintain automated workflows on platforms such as n8n and Make.",
+        "To manage lead generation campaigns and data enrichment at the client's request.",
+        "To process billing and payment collection for services.",
+        "To ensure the security of active integrations."
+      ]
+    },
+    section3: {
+      title: "Third-Party Integrations (Data Transfer)",
+      description: "The Client acknowledges and accepts that, for the provision of the service, Infinity Data acts as a technological integrator. Certain data may be processed through international third-party provider servers, including: OpenAI, Instantly.ai, PhantomBuster, Make.com, and n8n. Infinity Data commits to using only providers that comply with international information security standards."
+    },
+    section4: {
+      title: "Rights of Data Subjects",
+      paragraph1: "The data subject has the right to access their personal data free of charge at intervals no less than six months, unless they can demonstrate a legitimate interest as established in Article 14, paragraph 3 of Law No. 25.326.",
+      paragraph2: "To exercise the rights of access, rectification, and deletion, please send a request to",
+      email: "infinitydata.team@gmail.com",
+      paragraph3: "The National Directorate of Personal Data Protection, the supervisory body of Law No. 25.326, has the authority to handle complaints and claims filed regarding non-compliance with personal data protection regulations."
+    }
   },
   terms: {
     title: "Terms and Conditions of Service",
-    subtitle: "(Commercial and Legal Protection)"
+    subtitle: "(Commercial and Legal Protection)",
+    section1: {
+      title: "Acceptance of Terms",
+      description: "By contracting the services of Infinity Data (hereinafter, \"The Provider\"), the Client accepts these terms and conditions, which govern the use of our consulting, automation development, and maintenance services."
+    },
+    section2: {
+      title: "Service Description and Trial Period",
+      items: [
+        {
+          label: "Scope:",
+          text: "Infinity Data provides digital process automation services, API integration, and virtual assistants."
+        },
+        {
+          label: "Trial Period:",
+          text: "A limited trial period will be offered to verify the proper functioning of automated workflows. Specific conditions (duration, execution limit, or data volume) will be communicated in writing in the commercial proposal sent to the Client. Once said period has ended or the stipulated limit has been reached, continued use of the service implies full acceptance of the delivered functionality and agreement for the corresponding billing."
+        }
+      ]
+    },
+    section3: {
+      title: "Limitation of Liability",
+      items: [
+        {
+          label: "Third-Party Dependencies:",
+          text: "The Client understands that automations depend on the availability and functionality of third-party APIs (e.g., Google, Meta, OpenAI, CRMs). The Provider will not be responsible for service interruptions, data loss, or failures caused by changes in policies, server outages, or API updates from these external platforms."
+        },
+        {
+          label: "Use of Leads:",
+          text: "It is the Client's sole responsibility to ensure that the use of obtained data (cold email sending, storage) complies with applicable laws."
+        }
+      ]
+    },
+    section4: {
+      title: "Intellectual Property",
+      items: [
+        {
+          label: "Client's Property:",
+          text: "The Client retains ownership of all data and credentials provided."
+        },
+        {
+          label: "Provider's Property:",
+          text: "The automation logic, custom scripts, and JSON structures developed by Infinity Data are the intellectual property of the Provider. A non-exclusive, non-transferable license for use is granted to the Client upon full payment for the service."
+        }
+      ]
+    },
+    section5: {
+      title: "Confidentiality",
+      description: "Both parties agree to maintain strict confidentiality of all shared commercial, technical, and financial information. Infinity Data commits not to share, sell, or disclose the Client's API Keys or trade secrets."
+    },
+    section6: {
+      title: "Payments and Cancellation",
+      description: "Recurring services (Maintenance) are paid in advance from the 1st to the 10th of each month. Cancellation of recurring services requires a minimum notice of 30 days. Subscription costs for third-party tools (SaaS software) are the sole responsibility of the Client."
+    },
+    section7: {
+      title: "Applicable Law and Jurisdiction",
+      description: "These terms are governed by the laws of the Argentine Republic. For any dispute arising from the interpretation or execution of these terms, the parties submit to the jurisdiction of the Ordinary Courts located in the Autonomous City of Buenos Aires, waiving any other jurisdiction or forum."
+    }
   },
   contactModal: {
     title: "Let's talk about your project!",

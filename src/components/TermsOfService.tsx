@@ -7,116 +7,104 @@ const TermsOfService = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-24">
-      <div className="max-w-4xl mx-auto px-6 py-16">
-        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+        <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 mb-8 sm:mb-12">
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
             {t('terms.title')}
           </h1>
-          <p className="text-lg text-gray-500 mb-12">
+          <p className="text-sm sm:text-base md:text-lg text-gray-500 mb-8 sm:mb-12">
             {t('terms.subtitle')}
           </p>
 
           {/* Section 1 */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              1. Aceptación de los Términos
+          <section className="mb-8 sm:mb-12">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              1. {t('terms.section1.title')}
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              Al contratar los servicios de Infinity Data (en adelante, "El Prestador"), el Cliente acepta los presentes términos y condiciones, los cuales rigen el uso de nuestros servicios de consultoría, desarrollo de automatizaciones y mantenimiento.
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
+              {t('terms.section1.description')}
             </p>
           </section>
 
           {/* Section 2 */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              2. Descripción del Servicio y Período de Prueba
+          <section className="mb-8 sm:mb-12">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              2. {t('terms.section2.title')}
             </h2>
-            <ul className="space-y-4 text-gray-700 leading-relaxed ml-6">
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <div>
-                  <strong>Alcance:</strong> Infinity Data provee servicios de automatización de procesos digitales, integración de APIs y asistentes virtuales.
-                </div>
-              </li>
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <div>
-                  <strong>Período de Prueba:</strong> Se ofrecerá un período de prueba limitado para verificar el correcto funcionamiento de los flujos automatizados. Las condiciones específicas (duración, límite de ejecuciones o volumen de datos) serán comunicadas por escrito en la propuesta comercial enviada al Cliente. Una vez finalizado dicho período o alcanzado el límite estipulado, la continuación del uso del servicio implica la aceptación total de la funcionalidad entregada y la conformidad para la facturación correspondiente.
-                </div>
-              </li>
+            <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
+              {t('terms.section2.items').map((item: any, index: number) => (
+                <li key={index} className="flex">
+                  <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
+                  <div className="break-words">
+                    <strong>{item.label}</strong> {item.text}
+                  </div>
+                </li>
+              ))}
             </ul>
           </section>
 
           {/* Section 3 */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              3. Limitación de Responsabilidad
+          <section className="mb-8 sm:mb-12">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              3. {t('terms.section3.title')}
             </h2>
-            <ul className="space-y-4 text-gray-700 leading-relaxed ml-6">
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <div>
-                  <strong>Dependencia de Terceros:</strong> El Cliente comprende que las automatizaciones dependen de la disponibilidad y funcionamiento de APIs de terceros (ej. Google, Meta, OpenAI, CRMs). El Prestador no será responsable por interrupciones del servicio, pérdida de datos o fallos causados por cambios en las políticas, caídas de servidores o actualizaciones de API de estas plataformas externas.
-                </div>
-              </li>
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <div>
-                  <strong>Uso de Leads:</strong> Es responsabilidad exclusiva del Cliente asegurar que el uso de los datos obtenidos (envío de correos en frío, almacenamiento) cumpla con las leyes vigentes.
-                </div>
-              </li>
+            <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
+              {t('terms.section3.items').map((item: any, index: number) => (
+                <li key={index} className="flex">
+                  <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
+                  <div className="break-words">
+                    <strong>{item.label}</strong> {item.text}
+                  </div>
+                </li>
+              ))}
             </ul>
           </section>
 
           {/* Section 4 */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              4. Propiedad Intelectual
+          <section className="mb-8 sm:mb-12">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              4. {t('terms.section4.title')}
             </h2>
-            <ul className="space-y-4 text-gray-700 leading-relaxed ml-6">
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <div>
-                  <strong>Del Cliente:</strong> El Cliente conserva la propiedad de todos los datos y credenciales suministrados.
-                </div>
-              </li>
-              <li className="flex">
-                <span className="mr-3">•</span>
-                <div>
-                  <strong>Del Prestador:</strong> La lógica de automatización, scripts personalizados y estructuras JSON desarrolladas por Infinity Data son propiedad intelectual del Prestador. Se otorga al Cliente una licencia de uso no exclusiva e intransferible tras el pago total del servicio.
-                </div>
-              </li>
+            <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed ml-4 sm:ml-6">
+              {t('terms.section4.items').map((item: any, index: number) => (
+                <li key={index} className="flex">
+                  <span className="mr-2 sm:mr-3 flex-shrink-0">•</span>
+                  <div className="break-words">
+                    <strong>{item.label}</strong> {item.text}
+                  </div>
+                </li>
+              ))}
             </ul>
           </section>
 
           {/* Section 5 */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              5. Confidencialidad
+          <section className="mb-8 sm:mb-12">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              5. {t('terms.section5.title')}
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              Ambas partes acuerdan mantener la estricta confidencialidad de toda la información comercial, técnica y financiera compartida. Infinity Data se compromete a no compartir, vender ni divulgar las API Keys o secretos comerciales del Cliente.
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
+              {t('terms.section5.description')}
             </p>
           </section>
 
           {/* Section 6 */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              6. Pagos y Cancelación
+          <section className="mb-8 sm:mb-12">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              6. {t('terms.section6.title')}
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              Los servicios recurrentes (Mantenimiento) se abonan por adelantado del 1 al 10 de cada mes. La cancelación de servicios recurrentes requiere un preaviso mínimo de 30 días. Los costos de suscripción a herramientas de terceros (software SaaS) corren por cuenta exclusiva del Cliente.
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
+              {t('terms.section6.description')}
             </p>
           </section>
 
           {/* Section 7 */}
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              7. Ley Aplicable y Jurisdicción
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+              7. {t('terms.section7.title')}
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              Estos términos se rigen por las leyes de la República Argentina. Para cualquier controversia derivada de la interpretación o ejecución de estos términos, las partes se someten a la jurisdicción de los Tribunales Ordinarios con asiento en la Ciudad Autónoma de Buenos Aires, renunciando a cualquier otro fuero o jurisdicción.
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
+              {t('terms.section7.description')}
             </p>
           </section>
         </div>
