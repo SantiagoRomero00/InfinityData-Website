@@ -166,6 +166,11 @@ export default {
       serviceRequired: "Por favor selecciona un servicio",
       companyRequired: "El nombre de la empresa es requerido",
       problemsRequired: "Por favor describe los problemas que buscas resolver"
+    },
+    contact: {
+      emailTitle: "Escribinos por email",
+      emailAddress: "santiagoromero@getinfinitydata.com",
+      whatsappTitle: "Chatea por WhatsApp"
     }
   },
   success: {
