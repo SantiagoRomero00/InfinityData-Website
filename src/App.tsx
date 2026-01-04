@@ -2,7 +2,7 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { useTranslation } from './hooks/useTranslation';
-import Header from './components/Header';
+import Layout from './components/Layout';
 import Hero from './components/Hero';
 import ServicesGrid from './components/ServicesGrid';
 import HowItWorks from './components/HowItWorks';
@@ -35,7 +35,6 @@ const LoadingSpinner = () => {
 
 const HomePage = () => (
   <>
-    <Header />
     <Hero />
     <ServicesGrid />
     <HowItWorks />
@@ -53,57 +52,59 @@ function App() {
         <ErrorBoundary>
           <div className="min-h-screen">
             <Routes>
-              <Route path="/" element={<HomePage />} />
-              {/* ServiceDemo route temporarily disabled - keeping code for potential future use
-              <Route
-                path="/service-demo"
-                element={
-                  <Suspense fallback={<LoadingSpinner />}>
-                    <ServiceDemo />
-                  </Suspense>
-                }
-              />
-              */}
-              <Route
-                path="/demo"
-                element={
-                  <Suspense fallback={<LoadingSpinner />}>
-                    <LeadCaptureForm />
-                  </Suspense>
-                }
-              />
-              <Route
-                path="/success"
-                element={
-                  <Suspense fallback={<LoadingSpinner />}>
-                    <SuccessScreen />
-                  </Suspense>
-                }
-              />
-              <Route
-                path="/privacidad"
-                element={
-                  <Suspense fallback={<LoadingSpinner />}>
-                    <PrivacyPolicy />
-                  </Suspense>
-                }
-              />
-              <Route
-                path="/terminos"
-                element={
-                  <Suspense fallback={<LoadingSpinner />}>
-                    <TermsOfService />
-                  </Suspense>
-                }
-              />
-              <Route
-                path="/nosotros"
-                element={
-                  <Suspense fallback={<LoadingSpinner />}>
-                    <AboutUs />
-                  </Suspense>
-                }
-              />
+              <Route element={<Layout />}>
+                <Route path="/" element={<HomePage />} />
+                {/* ServiceDemo route temporarily disabled - keeping code for potential future use
+                <Route
+                  path="/service-demo"
+                  element={
+                    <Suspense fallback={<LoadingSpinner />}>
+                      <ServiceDemo />
+                    </Suspense>
+                  }
+                />
+                */}
+                <Route
+                  path="/demo"
+                  element={
+                    <Suspense fallback={<LoadingSpinner />}>
+                      <LeadCaptureForm />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/success"
+                  element={
+                    <Suspense fallback={<LoadingSpinner />}>
+                      <SuccessScreen />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/privacidad"
+                  element={
+                    <Suspense fallback={<LoadingSpinner />}>
+                      <PrivacyPolicy />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/terminos"
+                  element={
+                    <Suspense fallback={<LoadingSpinner />}>
+                      <TermsOfService />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/nosotros"
+                  element={
+                    <Suspense fallback={<LoadingSpinner />}>
+                      <AboutUs />
+                    </Suspense>
+                  }
+                />
+              </Route>
             </Routes>
             {/* Voiceflow Widget - Available on all pages */}
             {/* <VoiceflowWidget /> */}

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Infinity, ArrowLeft, GraduationCap, Award, Zap, Search, Settings, TrendingUp } from 'lucide-react';
+import { GraduationCap, Award, Zap, Search, Settings, TrendingUp } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import Footer from './Footer';
-import LanguageSwitch from './LanguageSwitch';
 import profileImage from '../../Assets/cropped_pp.jpeg';
 import n8nLogo from '../../Assets/n8n.svg';
 import makeLogo from '../../Assets/make.svg';
@@ -14,35 +13,8 @@ const AboutUs = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-          <div className="flex items-center justify-between">
-            <button
-              onClick={() => window.history.back()}
-              className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2 text-sm sm:text-base"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">{t('common.back')}</span>
-            </button>
-            <div className="flex items-center space-x-2 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
-              <div className="relative">
-                <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
-              </div>
-              <span className="text-lg sm:text-xl font-bold text-gray-900">Infinity Data</span>
-            </div>
-            <div className="w-10 sm:w-24"></div>
-          </div>
-        </div>
-      </header>
-
-      {/* Fixed Language Switcher */}
-      <div className="fixed top-4 left-4 md:top-6 md:left-auto md:right-6 z-40">
-        <LanguageSwitch textColor="text-gray-700/80" hoverColor="hover:text-gray-900" />
-      </div>
-
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
         <section className="mb-12 sm:mb-16 md:mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -200,7 +172,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <Footer />
     </div>

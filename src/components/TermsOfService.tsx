@@ -1,43 +1,13 @@
 import React from 'react';
-import { Infinity, ArrowLeft } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import Footer from './Footer';
-import LanguageSwitch from './LanguageSwitch';
 
 const TermsOfService = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="relative">
-                <Infinity className="w-8 h-8 text-emerald-600" />
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-400 opacity-20 rounded-full blur-sm"></div>
-              </div>
-              <span className="text-xl font-bold text-gray-900">Infinity Data</span>
-            </div>
-            <button
-              onClick={() => window.history.back()}
-              className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{t('common.back')}</span>
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Fixed Language Switcher */}
-      <div className="fixed top-4 left-4 md:top-6 md:left-auto md:right-6 z-40">
-        <LanguageSwitch textColor="text-gray-700/80" hoverColor="hover:text-gray-900" />
-      </div>
-
-      {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-24">
+      <div className="max-w-4xl mx-auto px-6 py-16">
         <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12">
           {/* Title */}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
@@ -150,9 +120,8 @@ const TermsOfService = () => {
             </p>
           </section>
         </div>
-      </main>
+      </div>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
