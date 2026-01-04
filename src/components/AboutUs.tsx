@@ -24,7 +24,6 @@ const AboutUs = () => {
                   alt="Santiago - Fundador de Infinity Data"
                   className="w-full h-auto rounded-3xl shadow-xl object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-600/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
 
