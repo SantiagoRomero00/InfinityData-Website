@@ -217,7 +217,7 @@ export default {
       databases: "Bases de Datos"
     },
     howWeWork: {
-      title: "Cómo Trabajamos",
+      title: "¿Cómo Trabajamos?",
       step1: {
         title: "1. Auditoría",
         description: "Analizamos a fondo tus procesos actuales, identificamos cuellos de botella y oportunidades de automatización que generen el mayor impacto."

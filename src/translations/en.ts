@@ -217,7 +217,7 @@ export default {
       databases: "Databases"
     },
     howWeWork: {
-      title: "How We Work",
+      title: "How we Work?",
       step1: {
         title: "1. Audit",
         description: "We thoroughly analyze your current processes, identify bottlenecks and automation opportunities that generate the greatest impact."
