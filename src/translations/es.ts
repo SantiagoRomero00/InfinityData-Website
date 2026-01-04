@@ -334,6 +334,11 @@ export default {
       description: "Estos términos se rigen por las leyes de la República Argentina. Para cualquier controversia derivada de la interpretación o ejecución de estos términos, las partes se someten a la jurisdicción de los Tribunales Ordinarios con asiento en la Ciudad Autónoma de Buenos Aires, renunciando a cualquier otro fuero o jurisdicción."
     }
   },
+  contact: {
+    email_title: "Escribinos por email",
+    email_address: "santiagoromero@getinfinitydata.com",
+    whatsapp_title: "Chatea por WhatsApp"
+  },
   contactModal: {
     title: "¡Hablemos de tu proyecto!",
     subtitle: "Estamos listos para transformar tu negocio con automatización inteligente.",

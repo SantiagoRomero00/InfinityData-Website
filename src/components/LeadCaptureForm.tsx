@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { ArrowRight, Shield, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { ArrowRight, Shield, CheckCircle, AlertCircle, Loader2, Mail, MessageCircle } from 'lucide-react';
 import { submitLeadForm, validateFormData } from '../utils/formSubmission';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -351,28 +351,35 @@ const LeadCaptureForm = () => {
             {/* Contact Info */}
             <div className="bg-gradient-to-br from-emerald-600 to-emerald-500 rounded-3xl shadow-xl p-6 sm:p-8 lg:p-12 text-white">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t('leadForm.contactInfo.title')}</h3>
-              <p className="text-emerald-100 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+              <p className="text-emerald-100 mb-6 leading-relaxed text-sm sm:text-base">
                 {t('leadForm.contactInfo.description')}
               </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl">📧</span>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="mailto:santiagoromero@getinfinitydata.com"
+                  className="bg-white rounded-2xl p-4 flex items-center space-x-4 hover:shadow-lg transition-shadow duration-200"
+                >
+                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-white font-semibold">{t('leadForm.contactInfo.email')}</p>
-                    <p className="text-emerald-100 text-sm break-all">infinitydata.team@gmail.com</p>
+                    <p className="text-gray-900 font-bold text-sm sm:text-base">{t('contact.email_title')}</p>
+                    <p className="text-emerald-600 text-xs sm:text-sm break-all">{t('contact.email_address')}</p>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl">💬</span>
+                </a>
+                <a
+                  href="https://wa.me/5491126227070"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white rounded-2xl p-4 flex items-center space-x-4 hover:shadow-lg transition-shadow duration-200"
+                >
+                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-white font-semibold">{t('leadForm.contactInfo.support')}</p>
-                    <p className="text-emerald-100 text-sm">{t('leadForm.contactInfo.liveChat')}</p>
+                    <p className="text-gray-900 font-bold text-sm sm:text-base">{t('contact.whatsapp_title')}</p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>

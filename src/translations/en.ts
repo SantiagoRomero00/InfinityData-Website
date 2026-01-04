@@ -334,6 +334,11 @@ export default {
       description: "These terms are governed by the laws of the Argentine Republic. For any dispute arising from the interpretation or execution of these terms, the parties submit to the jurisdiction of the Ordinary Courts located in the Autonomous City of Buenos Aires, waiving any other jurisdiction or forum."
     }
   },
+  contact: {
+    email_title: "Email us",
+    email_address: "santiagoromero@getinfinitydata.com",
+    whatsapp_title: "Chat on WhatsApp"
+  },
   contactModal: {
     title: "Let's talk about your project!",
     subtitle: "We're ready to transform your business with intelligent automation.",
