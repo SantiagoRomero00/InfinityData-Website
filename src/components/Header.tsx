@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Infinity, Menu, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
 import LanguageSwitch from './LanguageSwitch';
 
 const Header = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const isHomepage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +44,18 @@ const Header = () => {
 
   // Dynamic styles based on current section
   const getHeaderStyles = () => {
+    // For non-homepage routes, use consistent dark header with high contrast
+    if (!isHomepage) {
+      return {
+        bg: 'bg-gray-950/90',
+        border: 'border-gray-800',
+        text: 'text-white',
+        textHover: 'hover:text-emerald-400',
+        logo: 'text-white'
+      };
+    }
+
+    // Homepage: dynamic styling based on scroll position and section
     switch (currentSection) {
       case 'hero':
         return {
@@ -135,26 +151,26 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden border-t border-gray-200/50">
-          <nav className="px-4 py-4 space-y-3 bg-white/95 backdrop-blur-md">
+        <div className={`xl:hidden border-t ${isHomepage ? 'border-gray-200/50' : 'border-gray-800'}`}>
+          <nav className={`px-4 py-4 space-y-3 backdrop-blur-md ${isHomepage ? 'bg-white/95' : 'bg-gray-950/95'}`}>
             <a
               href="#servicios"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-gray-700 hover:text-emerald-600 font-medium transition-colors"
+              className={`block py-2 font-medium transition-colors ${isHomepage ? 'text-gray-700 hover:text-emerald-600' : 'text-white hover:text-emerald-400'}`}
             >
               {t('header.nav.services')}
             </a>
             <a
               href="#como-funciona"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-gray-700 hover:text-emerald-600 font-medium transition-colors"
+              className={`block py-2 font-medium transition-colors ${isHomepage ? 'text-gray-700 hover:text-emerald-600' : 'text-white hover:text-emerald-400'}`}
             >
               {t('header.nav.howWeWork')}
             </a>
             <a
               href="/nosotros"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-gray-700 hover:text-emerald-600 font-medium transition-colors"
+              className={`block py-2 font-medium transition-colors ${isHomepage ? 'text-gray-700 hover:text-emerald-600' : 'text-white hover:text-emerald-400'}`}
             >
               {t('header.nav.about')}
             </a>
