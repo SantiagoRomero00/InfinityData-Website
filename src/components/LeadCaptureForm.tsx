@@ -54,6 +54,15 @@ const LeadCaptureForm = () => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
 
+  // Update service when URL parameter changes
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    if (serviceParam && serviceParam !== formData.service) {
+      setFormData(prev => ({ ...prev, service: serviceParam }));
+      console.log('🔄 Service updated from URL:', serviceParam);
+    }
+  }, [searchParams]);
+
   const serviceOptions = [
     { value: '', label: t('leadForm.serviceOptions.select') },
     { value: 'Automatización de procesos', label: t('leadForm.serviceOptions.processAutomation') },

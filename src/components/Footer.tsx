@@ -70,10 +70,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">{t('footer.services.title')}</h3>
             <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base">
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.processAutomation')}</a></li>
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.customerSupport')}</a></li>
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.callScheduler')}</a></li>
-              <li><a href="/demo" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.customerIntegration')}</a></li>
+              <li><Link to="/demo?service=Automatización de procesos" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.processAutomation')}</Link></li>
+              <li><Link to="/demo?service=Soporte al cliente" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.customerSupport')}</Link></li>
+              <li><Link to="/demo?service=Planificador de llamadas" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.callScheduler')}</Link></li>
+              <li><Link to="/demo?service=Integración de clientes" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.customerIntegration')}</Link></li>
             </ul>
           </div>
 
@@ -81,7 +81,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">{t('footer.company.title')}</h3>
             <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base">
-              <li><a href="/nosotros" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.company.about')}</a></li>
+              <li><Link to="/nosotros" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.company.about')}</Link></li>
               <li>
                 <button
                   onClick={() => setIsContactModalOpen(true)}
