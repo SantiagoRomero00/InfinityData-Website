@@ -115,32 +115,33 @@ const Header = () => {
     <header className={`${styles.bg} backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b ${styles.border} transition-all duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="grid grid-cols-3 xl:flex items-center xl:justify-between">
-          {/* Mobile Menu Button - Left on Mobile */}
+          {/* Mobile Menu Button / Back Button - Left on Mobile */}
           <div className="flex items-center justify-start xl:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <X className={`w-6 h-6 ${styles.logo}`} />
-              ) : (
-                <Menu className={`w-6 h-6 ${styles.logo}`} />
-              )}
-            </button>
+            {isHomepage ? (
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 hover:bg-white/10 rounded-lg transition-colors duration-300"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <X className={`w-6 h-6 ${styles.logo}`} />
+                ) : (
+                  <Menu className={`w-6 h-6 ${styles.logo}`} />
+                )}
+              </button>
+            ) : (
+              <button
+                onClick={handleBack}
+                className={`p-2 ${styles.logo} ${styles.textHover} hover:bg-white/10 rounded-lg transition-colors duration-300`}
+                aria-label={t('common.back')}
+              >
+                <ArrowLeft className="w-6 h-6" />
+              </button>
+            )}
           </div>
 
           {/* Logo - Centered on Mobile, Left on Desktop */}
           <div className="flex items-center space-x-2 justify-center xl:justify-start">
-            {!isHomepage && (
-              <button
-                onClick={handleBack}
-                className={`p-2 ${styles.logo} ${styles.textHover} transition-colors duration-300 mr-2 hover:bg-white/10 rounded-lg`}
-                aria-label={t('common.back')}
-              >
-                <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-              </button>
-            )}
             <Link to="/" className="flex items-center space-x-2">
               <div className="relative">
                 <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
