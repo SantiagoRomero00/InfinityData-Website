@@ -348,7 +348,7 @@ export default {
     },
     whatsapp: {
       label: "Chat on WhatsApp",
-      message: "Hi Santi, I was looking at the Infinity Data website. I would like to know how AI can help me save time in my company.\nGracias"
+      message: "Hi Santi, I was looking at the Infinity Data website. I would like to know how AI can help me save time in my company.\nThanks"
     },
     close: "Close"
   }

@@ -28,6 +28,13 @@ const LeadCaptureForm = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
+  const generateWhatsAppLink = () => {
+    const phoneNumber = '5491155025482';
+    const message = t('contactModal.whatsapp.message');
+    const encodedMessage = encodeURIComponent(message);
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  };
+
   // Get service from URL parameters using React Router hook
   const preselectedService = searchParams.get('service') || '';
 
@@ -368,7 +375,7 @@ const LeadCaptureForm = () => {
                   </div>
                 </a>
                 <a
-                  href="https://wa.me/5491155025482"
+                  href={generateWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white rounded-2xl p-4 flex items-center space-x-4 hover:shadow-lg transition-shadow duration-200"
