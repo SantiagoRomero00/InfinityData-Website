@@ -74,7 +74,7 @@ const Footer = () => {
             <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base">
               <li><Link to="/demo?service=Automatización de procesos" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.processAutomation')}</Link></li>
               <li><Link to="/demo?service=Soporte al cliente" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.customerSupport')}</Link></li>
-              <li><Link to="/demo?service=Planificador de llamadas" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.callScheduler')}</Link></li>
+              <li><Link to="/demo?service=web-development" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.websiteDevelopment')}</Link></li>
               <li><Link to="/demo?service=Integración de clientes" className="hover:text-emerald-400 transition-colors inline-block py-1">{t('footer.services.customerIntegration')}</Link></li>
             </ul>
           </div>
