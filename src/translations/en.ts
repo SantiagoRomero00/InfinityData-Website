@@ -95,7 +95,17 @@ export default {
     },
     copyright: "© 2026 Infinity Data. All rights reserved.",
     privacy: "Privacy Policy",
-    terms: "Terms and Conditions"
+    terms: "Terms and Conditions",
+    report_issue: "Found any issue?"
+  },
+  report: {
+    title: "Report an Issue",
+    placeholder: "Please describe the bug or issue you found...",
+    submit: "Send Report",
+    submitting: "Sending...",
+    success: "Thanks for your feedback!",
+    error: "Error sending report. Please try again.",
+    close: "Close"
   },
   leadForm: {
     title: {

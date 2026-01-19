@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { Infinity, Mail, Phone, MapPin, Instagram } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import ContactModal from './ContactModal';
+import ReportIssueModal from './ReportIssueModal';
 
 const Footer = () => {
   const { t } = useTranslation();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
 
   return (
     <footer className="bg-[#1D1D1F] text-white py-12 sm:py-16">
@@ -97,9 +99,16 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
-              {t('footer.copyright')}
-            </p>
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-gray-400 text-xs sm:text-sm text-center md:text-left">
+              <span>{t('footer.copyright')}</span>
+              <span className="hidden sm:inline">|</span>
+              <button
+                onClick={() => setIsReportModalOpen(true)}
+                className="text-gray-500 hover:text-emerald-500 transition-colors cursor-pointer"
+              >
+                {t('footer.report_issue')}
+              </button>
+            </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-xs sm:text-sm text-gray-400 text-center">
               <Link to="/privacidad" className="hover:text-emerald-400 transition-colors">{t('footer.privacy')}</Link>
               <Link to="/terminos" className="hover:text-emerald-400 transition-colors break-words">{t('footer.terms')}</Link>
@@ -111,6 +120,10 @@ const Footer = () => {
       <ContactModal
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
+      />
+      <ReportIssueModal
+        isOpen={isReportModalOpen}
+        onClose={() => setIsReportModalOpen(false)}
       />
     </footer>
   );

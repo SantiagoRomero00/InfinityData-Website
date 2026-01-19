@@ -95,7 +95,17 @@ export default {
     },
     copyright: "© 2026 Infinity Data. Todos los derechos reservados.",
     privacy: "Política de Privacidad",
-    terms: "Términos y Condiciones"
+    terms: "Términos y Condiciones",
+    report_issue: "¿Encontraste algún error?"
+  },
+  report: {
+    title: "Reportar un problema",
+    placeholder: "Por favor describe el error o problema que encontraste...",
+    submit: "Enviar reporte",
+    submitting: "Enviando...",
+    success: "¡Gracias por tus comentarios!",
+    error: "Error al enviar. Intenta de nuevo.",
+    close: "Cerrar"
   },
   leadForm: {
     title: {
