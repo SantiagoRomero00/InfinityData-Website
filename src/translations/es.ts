@@ -33,11 +33,11 @@ export default {
       button: "Contratar Servicio",
       tagline: "Soporte continuo y efectivo"
     },
-    callScheduler: {
-      title: "Planificador de Llamadas",
-      description: "Convierte leads en reuniones automáticamente",
+    websiteDevelopment: {
+      title: "Desarrollo Web",
+      description: "Sitios web personalizados de alto rendimiento a medida.",
       button: "Contratar Servicio",
-      tagline: "Agenda automática y confiable"
+      tagline: "Soluciones profesionales y escalables"
     },
     customerIntegration: {
       title: "Integración de Clientes",
@@ -85,7 +85,7 @@ export default {
       title: "Servicios",
       processAutomation: "Automatización de Procesos",
       customerSupport: "Soporte al Cliente",
-      callScheduler: "Planificador de Llamadas",
+      websiteDevelopment: "Desarrollo Web",
       customerIntegration: "Integración de Clientes"
     },
     company: {
@@ -133,7 +133,7 @@ export default {
       select: "Selecciona un servicio",
       processAutomation: "Automatización de procesos",
       customerSupport: "Soporte al cliente",
-      callScheduler: "Planificador de llamadas",
+      websiteDevelopment: "Desarrollo web",
       customerIntegration: "Integración de clientes"
     },
     submitButton: "Enviar Solicitud",

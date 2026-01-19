@@ -67,7 +67,7 @@ const LeadCaptureForm = () => {
     { value: '', label: t('leadForm.serviceOptions.select') },
     { value: 'Automatización de procesos', label: t('leadForm.serviceOptions.processAutomation') },
     { value: 'Soporte al cliente', label: t('leadForm.serviceOptions.customerSupport') },
-    { value: 'Planificador de llamadas', label: t('leadForm.serviceOptions.callScheduler') },
+    { value: 'web-development', label: t('leadForm.serviceOptions.websiteDevelopment') },
     { value: 'Integración de clientes', label: t('leadForm.serviceOptions.customerIntegration') }
   ];
 

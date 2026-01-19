@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, MessageSquare, Calendar, Users } from 'lucide-react';
+import { Brain, MessageSquare, Code, Users } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
 const ServicesGrid = () => {
@@ -88,30 +88,30 @@ const ServicesGrid = () => {
             </div>
           </div>
 
-          {/* Servicio 3: Planificador de Llamadas */}
+          {/* Servicio 3: Website Development */}
           <div className="rounded-3xl p-6 sm:p-8 lg:p-12 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[400px] sm:min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#6EE7C6'}}>
             <div className="relative z-10 flex flex-col flex-1">
               <div className="mb-6 sm:mb-8">
-                <Calendar className="w-12 h-12 sm:w-16 sm:h-16 text-emerald-900 mb-4 sm:mb-6 drop-shadow-sm" />
+                <Code className="w-12 h-12 sm:w-16 sm:h-16 text-emerald-900 mb-4 sm:mb-6 drop-shadow-sm" />
               </div>
 
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-900 mb-4 sm:mb-6 leading-tight drop-shadow-sm">
-                {t('services.callScheduler.title')}
+                {t('services.websiteDevelopment.title')}
               </h3>
 
               <p className="text-base sm:text-lg lg:text-xl text-emerald-800 font-normal mb-8 sm:mb-12 leading-relaxed">
-                {t('services.callScheduler.description')}
+                {t('services.websiteDevelopment.description')}
               </p>
 
               <div className="mt-auto mb-6 sm:mb-8">
-                <a href="/demo?service=Planificador de llamadas" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
-                  {t('services.callScheduler.button')}
+                <a href="/demo?service=web-development" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
+                  {t('services.websiteDevelopment.button')}
                 </a>
               </div>
             </div>
 
             <div className="text-xs sm:text-sm text-emerald-800 font-medium relative z-10">
-              {t('services.callScheduler.tagline')}
+              {t('services.websiteDevelopment.tagline')}
             </div>
 
             {/* Abstract 3D Visual */}

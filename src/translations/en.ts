@@ -33,11 +33,11 @@ export default {
       button: "Hire Service",
       tagline: "Continuous and effective support"
     },
-    callScheduler: {
-      title: "Call Scheduler",
-      description: "Turn leads into meetings automatically",
+    websiteDevelopment: {
+      title: "Website Development",
+      description: "Custom high-performance websites tailored to your brand.",
       button: "Hire Service",
-      tagline: "Automated and reliable scheduling"
+      tagline: "Professional and scalable solutions"
     },
     customerIntegration: {
       title: "Customer Integration",
@@ -85,7 +85,7 @@ export default {
       title: "Services",
       processAutomation: "Process Automation",
       customerSupport: "Customer Support",
-      callScheduler: "Call Scheduler",
+      websiteDevelopment: "Website Development",
       customerIntegration: "Customer Integration"
     },
     company: {
@@ -133,7 +133,7 @@ export default {
       select: "Select a service",
       processAutomation: "Process automation",
       customerSupport: "Customer support",
-      callScheduler: "Call scheduler",
+      websiteDevelopment: "Website development",
       customerIntegration: "Customer integration"
     },
     submitButton: "Submit Request",
