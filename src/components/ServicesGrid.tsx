@@ -1,4 +1,3 @@
-import React from 'react';
 import { Brain, MessageSquare, Code, Users } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -6,160 +5,110 @@ const ServicesGrid = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="servicios" className="py-12 sm:py-16 md:py-20 bg-white">
+    <section id="servicios" className="py-20 sm:py-32 bg-brand-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-600 mb-4 sm:mb-6">
+        <div className="text-center mb-16 sm:mb-24">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
             {t('services.title')}
           </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-brand-emerald-500 to-cyan-400 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
-          {/* Servicio 1: Automatización de Procesos */}
-          <div className="rounded-3xl p-6 sm:p-8 lg:p-12 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[400px] sm:min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#29565B'}}>
-            <div className="relative z-10 flex flex-col flex-1">
-              <div className="mb-6 sm:mb-8">
-                <Brain className="w-12 h-12 sm:w-16 sm:h-16 text-white mb-4 sm:mb-6 drop-shadow-sm" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px] sm:auto-rows-[400px]">
+          {/* Service 1: Automatización de Procesos - Large Bento Item */}
+          <div className="md:col-span-2 md:row-span-1 rounded-[2.5rem] p-8 lg:p-12 flex flex-col relative overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-brand-emerald-500/10 border border-white/5 bg-gradient-to-br from-[#1a2e2b] to-brand-slate-950">
+            <div className="relative z-10 flex flex-col h-full">
+              <div className="mb-8">
+                <div className="w-16 h-16 bg-brand-emerald-500/10 rounded-2xl flex items-center justify-center border border-brand-emerald-500/20 group-hover:scale-110 transition-transform duration-500">
+                  <Brain className="w-8 h-8 text-brand-emerald-400" />
+                </div>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-sm">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
                 {t('services.processAutomation.title')}
               </h3>
 
-              <p className="text-base sm:text-lg lg:text-xl text-white/90 font-normal mb-8 sm:mb-12 leading-relaxed">
+              <p className="text-lg text-slate-300 font-medium mb-8 max-w-md opacity-80 group-hover:opacity-100 transition-opacity">
                 {t('services.processAutomation.description')}
               </p>
 
-              <div className="mt-auto mb-6 sm:mb-8">
-                <a href="/demo?service=Automatización de procesos" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
+              <div className="mt-auto">
+                <a href="/demo?service=Automatización de procesos" className="inline-flex items-center gap-2 text-brand-emerald-400 font-bold hover:text-brand-emerald-300 transition-colors">
                   {t('services.processAutomation.button')}
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </a>
               </div>
             </div>
 
-            <div className="text-xs sm:text-sm text-white/80 font-medium relative z-10">
-              {t('services.processAutomation.tagline')}
-            </div>
-
-            {/* Abstract 3D Visual */}
-            <div className="absolute top-1/2 right-8 transform -translate-y-1/2 opacity-15 group-hover:opacity-25 transition-opacity duration-300">
-              <div className="w-64 h-64 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/10 rounded-full blur-3xl"></div>
-                <div className="absolute top-8 left-8 w-48 h-48 bg-gradient-to-tr from-white/10 to-white/20 rounded-2xl rotate-12 shadow-2xl"></div>
-              </div>
-            </div>
+            {/* Ambient Glow */}
+            <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-brand-emerald-500/10 rounded-full blur-[100px] group-hover:bg-brand-emerald-500/20 transition-all duration-700"></div>
           </div>
 
-          {/* Servicio 2: Soporte al Cliente */}
-          <div className="rounded-3xl p-6 sm:p-8 lg:p-12 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[400px] sm:min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#47958A'}}>
-            <div className="relative z-10 flex flex-col flex-1">
-              <div className="mb-6 sm:mb-8">
-                <MessageSquare className="w-12 h-12 sm:w-16 sm:h-16 text-white mb-4 sm:mb-6 drop-shadow-sm" />
+          {/* Service 2: Soporte al Cliente - Standard Bento Item */}
+          <div className="md:col-span-1 rounded-[2.5rem] p-8 flex flex-col relative overflow-hidden group transition-all duration-500 border border-white/5 bg-[#1e292e]">
+            <div className="relative z-10 flex flex-col h-full text-center items-center">
+              <div className="mb-6">
+                <div className="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center border border-cyan-500/20 group-hover:rotate-12 transition-all duration-500">
+                  <MessageSquare className="w-7 h-7 text-cyan-400" />
+                </div>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-sm">
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
                 {t('services.customerSupport.title')}
               </h3>
 
-              <p className="text-base sm:text-lg lg:text-xl text-white/90 font-normal mb-8 sm:mb-12 leading-relaxed">
+              <p className="text-base text-slate-300 opacity-70 mb-6">
                 {t('services.customerSupport.description')}
               </p>
 
-              <div className="mt-auto mb-6 sm:mb-8">
-                <a href="/demo?service=Soporte al cliente" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
+              <div className="mt-auto">
+                <a href="/demo?service=Soporte al cliente" className="px-6 py-2 rounded-full border border-white/10 text-white hover:bg-white/5 transition-all">
                   {t('services.customerSupport.button')}
                 </a>
               </div>
             </div>
-
-            <div className="text-xs sm:text-sm text-white/80 font-medium relative z-10">
-              {t('services.customerSupport.tagline')}
-            </div>
-
-            {/* Abstract 3D Visual */}
-            <div className="absolute top-1/2 right-8 transform -translate-y-1/2 opacity-15 group-hover:opacity-25 transition-opacity duration-300">
-              <div className="w-64 h-64 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/10 rounded-full blur-3xl"></div>
-                <div className="absolute top-8 left-8 w-48 h-48 border-2 border-white/30 rounded-2xl rotate-12 shadow-2xl backdrop-blur-sm">
-                  <div className="absolute inset-4 border border-white/20 rounded-xl opacity-60"></div>
-                  <div className="absolute inset-8 border border-white/10 rounded-lg opacity-40"></div>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Servicio 3: Website Development */}
-          <div className="rounded-3xl p-6 sm:p-8 lg:p-12 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[400px] sm:min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#6EE7C6'}}>
-            <div className="relative z-10 flex flex-col flex-1">
-              <div className="mb-6 sm:mb-8">
-                <Code className="w-12 h-12 sm:w-16 sm:h-16 text-emerald-900 mb-4 sm:mb-6 drop-shadow-sm" />
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-900 mb-4 sm:mb-6 leading-tight drop-shadow-sm">
+          {/* Service 3: Website Development - Standard Bento Item */}
+          <div className="md:col-span-1 rounded-[2.5rem] p-8 flex flex-col relative overflow-hidden group transition-all duration-500 border border-white/5 bg-gradient-to-tr from-[#2d3748] to-[#1a202c]">
+            <div className="relative z-10 flex flex-col h-full">
+              <Code className="w-10 h-10 text-indigo-400 mb-6" />
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
                 {t('services.websiteDevelopment.title')}
               </h3>
-
-              <p className="text-base sm:text-lg lg:text-xl text-emerald-800 font-normal mb-8 sm:mb-12 leading-relaxed">
+              <p className="text-base text-slate-300 opacity-70 mb-8">
                 {t('services.websiteDevelopment.description')}
               </p>
-
-              <div className="mt-auto mb-6 sm:mb-8">
-                <a href="/demo?service=web-development" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
+              <div className="mt-auto">
+                <a href="/demo?service=web-development" className="text-indigo-400 font-semibold hover:underline decoration-2 underline-offset-4">
                   {t('services.websiteDevelopment.button')}
                 </a>
               </div>
             </div>
-
-            <div className="text-xs sm:text-sm text-emerald-800 font-medium relative z-10">
-              {t('services.websiteDevelopment.tagline')}
-            </div>
-
-            {/* Abstract 3D Visual */}
-            <div className="absolute top-1/2 right-8 transform -translate-y-1/2 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
-              <div className="w-64 h-64 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-emerald-400/10 rounded-full blur-3xl"></div>
-                <div className="absolute top-8 left-8 w-48 h-48 bg-emerald-500/10 rounded-2xl rotate-12 shadow-2xl backdrop-blur-sm border border-emerald-600/20">
-                  <div className="absolute inset-4 border border-emerald-500/15 rounded-xl"></div>
-                  <div className="absolute inset-8 bg-emerald-400/5 rounded-lg"></div>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Servicio 4: Integración de Clientes */}
-          <div className="rounded-3xl p-6 sm:p-8 lg:p-12 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 min-h-[400px] sm:min-h-[500px] shadow-lg hover:shadow-xl" style={{backgroundColor: '#E8F5E9'}}>
-            <div className="relative z-10 flex flex-col flex-1">
-              <div className="mb-6 sm:mb-8">
-                <Users className="w-12 h-12 sm:w-16 sm:h-16 text-emerald-700 mb-4 sm:mb-6 drop-shadow-sm" />
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-900 mb-4 sm:mb-6 leading-tight drop-shadow-sm">
-                {t('services.customerIntegration.title')}
-              </h3>
-
-              <p className="text-base sm:text-lg lg:text-xl text-emerald-800 font-normal mb-8 sm:mb-12 leading-relaxed">
-                {t('services.customerIntegration.description')}
-              </p>
-
-              <div className="mt-auto mb-6 sm:mb-8">
-                <a href="/demo?service=Integración de clientes" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base lg:text-[17px] transition-all duration-200 shadow-lg hover:shadow-xl text-center border border-emerald-700 hover:border-emerald-800 block">
+          {/* Service 4: Integración de Clientes - Large Bento Item */}
+          <div className="md:col-span-2 rounded-[2.5rem] p-8 lg:p-12 flex flex-col relative overflow-hidden group transition-all duration-500 border border-white/5 bg-brand-slate-900 shadow-inner shadow-white/5">
+            <div className="relative z-10 flex flex-col h-full md:flex-row md:items-center gap-8">
+              <div className="flex-1">
+                <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 transition-transform">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
+                  {t('services.customerIntegration.title')}
+                </h3>
+                <p className="text-lg text-slate-400 mb-6 max-w-sm">
+                  {t('services.customerIntegration.description')}
+                </p>
+                <a href="/demo?service=Integración de clientes" className="bg-white text-brand-slate-950 px-8 py-3 rounded-full font-bold hover:bg-slate-200 transition-colors inline-block text-center">
                   {t('services.customerIntegration.button')}
                 </a>
               </div>
-            </div>
 
-            <div className="text-xs sm:text-sm text-emerald-700 font-medium relative z-10">
-              {t('services.customerIntegration.tagline')}
-            </div>
-
-            {/* Abstract 3D Visual */}
-            <div className="absolute top-1/2 right-8 transform -translate-y-1/2 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
-              <div className="w-64 h-64 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-emerald-400/10 rounded-full blur-3xl"></div>
-                <div className="absolute top-8 left-8 w-48 h-48 bg-emerald-500/10 rounded-2xl rotate-12 shadow-2xl backdrop-blur-sm border border-emerald-600/20">
-                  <div className="absolute inset-4 border border-emerald-500/15 rounded-xl"></div>
-                  <div className="absolute inset-8 bg-emerald-400/5 rounded-lg"></div>
-                </div>
+              {/* Abstract Visual Detail */}
+              <div className="hidden lg:block w-48 h-48 relative opacity-20 group-hover:opacity-40 transition-opacity">
+                <div className="absolute inset-0 border-4 border-dashed border-white rounded-3xl animate-[spin_10s_linear_infinite]"></div>
+                <div className="absolute inset-8 bg-white/20 rounded-2xl"></div>
               </div>
             </div>
           </div>

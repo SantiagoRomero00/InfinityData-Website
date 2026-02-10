@@ -8,13 +8,14 @@ import ServicesGrid from './components/ServicesGrid';
 import HowItWorks from './components/HowItWorks';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
-// import VoiceflowWidget from './components/VoiceflowWidget';
+import TrustMarquee from './components/TrustMarquee';
+import Testimonials from './components/Testimonials';
 import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy load the form component for better performance
 const LeadCaptureForm = lazy(() => import('./components/LeadCaptureForm'));
 const SuccessScreen = lazy(() => import('./components/SuccessScreen'));
-const ServiceDemo = lazy(() => import('./components/ServiceDemo'));
+// const ServiceDemo = lazy(() => import('./components/ServiceDemo'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const AboutUs = lazy(() => import('./components/AboutUs'));
@@ -53,8 +54,10 @@ const HomePage = () => {
   return (
     <>
       <Hero />
+      <TrustMarquee />
       <ServicesGrid />
       <HowItWorks />
+      <Testimonials />
       <FinalCTA />
       <Footer />
     </>

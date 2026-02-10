@@ -1,9 +1,15 @@
-import React from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { Search, Settings, TrendingUp } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
 const HowItWorks = () => {
   const { t } = useTranslation();
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   const steps = [
     {
@@ -27,44 +33,66 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="como-funciona" className="py-12 sm:py-16 md:py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+    <section id="como-funciona" className="py-20 sm:py-32 bg-brand-slate-950 relative overflow-hidden">
+      {/* Animated Background Line */}
+      <motion.div
+        className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-emerald-500 to-cyan-500 origin-left z-20"
+        style={{ scaleX }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16 sm:mb-24"
+        >
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
             {t('howItWorks.title')}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-normal max-w-3xl mx-auto px-4">
+          <p className="text-lg sm:text-2xl text-slate-400 font-medium max-w-3xl mx-auto px-4 tracking-tight">
             {t('howItWorks.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-20">
           {steps.map((step, index) => (
-            <div key={index} className="text-center group">
-              <div className="relative mb-6 sm:mb-8 flex justify-center">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-emerald-400 to-[#61CBB3] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <step.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="text-center group relative"
+            >
+              <div className="relative mb-8 flex justify-center">
+                <div className="w-24 h-24 bg-gradient-to-br from-brand-emerald-500 to-cyan-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl shadow-brand-emerald-500/20">
+                  <step.icon className="w-12 h-12 text-white" />
                 </div>
-                <div className="absolute -top-2 sm:-top-4 right-1/4 sm:right-1/3 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center font-bold text-[#1D1D1F] text-sm sm:text-lg">
+                <div className="absolute -top-4 right-1/4 w-12 h-12 bg-white rounded-2xl flex items-center justify-center font-black text-brand-slate-950 text-xl shadow-lg">
                   {step.number}
                 </div>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">
+              <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">
                 {step.title}
               </h3>
 
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
+              <p className="text-lg text-slate-400 leading-relaxed px-4 font-medium">
                 {step.description}
               </p>
 
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-emerald-400 to-transparent transform translate-x-6"></div>
+                <div className="hidden md:block absolute top-12 left-[80%] w-[40%] h-px bg-gradient-to-r from-brand-emerald-500/50 to-transparent"></div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Decorative Blur */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-emerald-500/5 blur-[120px] rounded-full -z-0"></div>
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Infinity, Menu, X, ArrowLeft } from 'lucide-react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
@@ -8,7 +8,6 @@ const Header = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -33,18 +32,17 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setScrolled(scrollPosition > 50);
 
       // Detect current section based on scroll position
-      const heroSection = document.querySelector('section');
-      const servicesSection = document.querySelector('#servicios');
-      const howItWorksSection = document.querySelector('#como-funciona');
-      
+      const heroSection = document.querySelector('section') as HTMLElement;
+      const servicesSection = document.querySelector('#servicios') as HTMLElement;
+      const howItWorksSection = document.querySelector('#como-funciona') as HTMLElement;
+
       if (heroSection && servicesSection && howItWorksSection) {
         const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
         const servicesBottom = servicesSection.offsetTop + servicesSection.offsetHeight;
         const howItWorksTop = howItWorksSection.offsetTop;
-        
+
         if (scrollPosition < heroBottom - 100) {
           setCurrentSection('hero');
         } else if (scrollPosition < servicesBottom - 100) {
@@ -76,33 +74,33 @@ const Header = () => {
     switch (currentSection) {
       case 'hero':
         return {
-          bg: 'bg-white/20',
-          border: 'border-white/20',
-          text: 'text-white/80',
+          bg: 'bg-brand-slate-950/20',
+          border: 'border-white/5',
+          text: 'text-slate-300',
           textHover: 'hover:text-white',
           logo: 'text-white'
         };
       case 'services':
         return {
-          bg: 'bg-white/95',
-          border: 'border-gray-200/50',
-          text: 'text-gray-700/80',
-          textHover: 'hover:text-gray-900',
-          logo: 'text-gray-900'
+          bg: 'bg-brand-slate-950/80',
+          border: 'border-white/10',
+          text: 'text-slate-300',
+          textHover: 'hover:text-white',
+          logo: 'text-white'
         };
       case 'dark':
         return {
-          bg: 'bg-black/80',
-          border: 'border-white/20',
-          text: 'text-white/80',
+          bg: 'bg-brand-slate-950/90',
+          border: 'border-white/10',
+          text: 'text-slate-300',
           textHover: 'hover:text-white',
           logo: 'text-white'
         };
       default:
         return {
-          bg: 'bg-white/20',
-          border: 'border-white/20',
-          text: 'text-white/80',
+          bg: 'bg-brand-slate-950/20',
+          border: 'border-white/5',
+          text: 'text-slate-300',
           textHover: 'hover:text-white',
           logo: 'text-white'
         };
@@ -112,7 +110,7 @@ const Header = () => {
   const styles = getHeaderStyles();
 
   return (
-    <header className={`${styles.bg} backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b ${styles.border} transition-all duration-300`}>
+    <header className={`${styles.bg} backdrop-blur-xl fixed top-0 left-0 right-0 z-50 border-b ${styles.border} transition-all duration-500`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="grid grid-cols-3 xl:flex items-center xl:justify-between">
           {/* Mobile Menu Button / Back Button - Left on Mobile */}
