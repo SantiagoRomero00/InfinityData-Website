@@ -74,7 +74,7 @@ const LeadCaptureForm = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
@@ -97,7 +97,7 @@ const LeadCaptureForm = () => {
 
     // Enviar formulario
     const result = await submitLeadForm(formData);
-    
+
     if (result.success) {
       // Redirect to success page
       navigate('/success');
@@ -105,165 +105,125 @@ const LeadCaptureForm = () => {
       setSubmitStatus('error');
       setErrorMessage(result.error || 'Error desconocido');
     }
-    
+
     setIsSubmitting(false);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-            {t('leadForm.title.line1')}
-            <br />
-            <span className="bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent">
+    <div className="min-h-screen bg-brand-slate-950 pt-24 selection:bg-brand-emerald-500/30">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-20 relative">
+        {/* Ambient Glows */}
+        <div className="absolute top-20 -left-20 w-64 h-64 bg-brand-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-20 -right-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="text-center mb-12 sm:mb-20 relative z-10">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
+            {t('leadForm.title.line1')}{' '}
+            <span className="bg-gradient-to-r from-brand-emerald-400 to-cyan-400 bg-clip-text text-transparent">
               {t('leadForm.title.line2')}
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
+          <p className="text-lg sm:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed px-4 font-medium tracking-tight">
             {t('leadForm.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
           {/* Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-12">
-              {submitStatus === 'success' && (
-                <div className="mb-8 p-6 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-emerald-800">{t('leadForm.success.title')}</h3>
-                    <p className="text-emerald-700">{t('leadForm.success.message')}</p>
-                  </div>
-                </div>
-              )}
-
+          <div className="lg:col-span-8">
+            <div className="bg-brand-slate-900/50 backdrop-blur-xl rounded-[2.5rem] border border-white/10 p-6 sm:p-12 shadow-2xl shadow-black/50">
               {submitStatus === 'error' && (
-                <div className="mb-8 p-6 bg-red-50 border border-red-200 rounded-2xl flex items-center space-x-3">
-                  <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0" />
+                <div className="mb-8 p-6 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center space-x-3">
+                  <AlertCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-red-800">{t('leadForm.error.title')}</h3>
-                    <p className="text-red-700">{errorMessage}</p>
-                    <p className="text-red-600 text-sm mt-2">
-                      {t('leadForm.error.contactMessage')}
-                    </p>
+                    <h3 className="font-bold text-red-500">{t('leadForm.error.title')}</h3>
+                    <p className="text-red-400/80 text-sm">{errorMessage}</p>
                   </div>
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-                {/* Name */}
-                <div>
-                  <label htmlFor="name" className="block text-xs sm:text-sm font-semibold text-gray-900 mb-2 sm:mb-3">
-                    {t('leadForm.fields.name')}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-4 border-2 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 ${
-                      errors.name
-                        ? 'border-red-300 focus:border-red-500'
-                        : 'border-gray-200 focus:border-emerald-500'
-                    }`}
-                    placeholder={t('leadForm.placeholders.name')}
-                    aria-describedby={errors.name ? 'name-error' : undefined}
-                  />
-                  {errors.name && (
-                    <p id="name-error" className="mt-2 text-sm text-red-600" role="alert">
-                      {errors.name}
-                    </p>
-                  )}
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Name */}
+                  <div className="space-y-3">
+                    <label htmlFor="name" className="block text-sm font-bold text-slate-300 ml-1">
+                      {t('leadForm.fields.name')}
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className={`w-full px-5 py-4 bg-brand-slate-950/50 border-2 rounded-2xl text-white placeholder-slate-600 transition-all focus:outline-none focus:ring-0 ${errors.name
+                          ? 'border-red-500/50 focus:border-red-500'
+                          : 'border-white/5 focus:border-brand-emerald-500/50'
+                        }`}
+                      placeholder={t('leadForm.placeholders.name')}
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div className="space-y-3">
+                    <label htmlFor="email" className="block text-sm font-bold text-slate-300 ml-1">
+                      {t('leadForm.fields.email')}
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className={`w-full px-5 py-4 bg-brand-slate-950/50 border-2 rounded-2xl text-white placeholder-slate-600 transition-all focus:outline-none focus:ring-0 ${errors.email
+                          ? 'border-red-500/50 focus:border-red-500'
+                          : 'border-white/5 focus:border-brand-emerald-500/50'
+                        }`}
+                      placeholder={t('leadForm.placeholders.email')}
+                    />
+                  </div>
                 </div>
 
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-3">
-                    {t('leadForm.fields.email')}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-4 border-2 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 ${
-                      errors.email
-                        ? 'border-red-300 focus:border-red-500'
-                        : 'border-gray-200 focus:border-emerald-500'
-                    }`}
-                    placeholder={t('leadForm.placeholders.email')}
-                    aria-describedby={errors.email ? 'email-error' : undefined}
-                  />
-                  {errors.email && (
-                    <p id="email-error" className="mt-2 text-sm text-red-600" role="alert">
-                      {errors.email}
-                    </p>
-                  )}
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Service Selection */}
+                  <div className="space-y-3">
+                    <label htmlFor="service" className="block text-sm font-bold text-slate-300 ml-1">
+                      {t('leadForm.fields.service')}
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleInputChange}
+                      className="w-full px-5 py-4 bg-brand-slate-950/50 border-2 border-white/5 rounded-2xl text-white transition-all focus:outline-none focus:ring-0 focus:border-brand-emerald-500/50 appearance-none"
+                    >
+                      {serviceOptions.map(option => (
+                        <option key={option.value} value={option.value} className="bg-brand-slate-900">
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
-                {/* Service Selection */}
-                <div>
-                  <label htmlFor="service" className="block text-sm font-semibold text-gray-900 mb-3">
-                    {t('leadForm.fields.service')}
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-4 border-2 rounded-xl text-gray-900 transition-colors focus:outline-none focus:ring-0 ${
-                      errors.service 
-                        ? 'border-red-300 focus:border-red-500' 
-                        : 'border-gray-200 focus:border-emerald-500'
-                    }`}
-                    aria-describedby={errors.service ? 'service-error' : undefined}
-                  >
-                    {serviceOptions.map(option => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.service && (
-                    <p id="service-error" className="mt-2 text-sm text-red-600" role="alert">
-                      {errors.service}
-                    </p>
-                  )}
-                </div>
-
-                {/* Company Name */}
-                <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-3">
-                    {t('leadForm.fields.company')}
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-4 border-2 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 ${
-                      errors.company
-                        ? 'border-red-300 focus:border-red-500'
-                        : 'border-gray-200 focus:border-emerald-500'
-                    }`}
-                    placeholder={t('leadForm.placeholders.company')}
-                    aria-describedby={errors.company ? 'company-error' : undefined}
-                  />
-                  {errors.company && (
-                    <p id="company-error" className="mt-2 text-sm text-red-600" role="alert">
-                      {errors.company}
-                    </p>
-                  )}
+                  {/* Company Name */}
+                  <div className="space-y-3">
+                    <label htmlFor="company" className="block text-sm font-bold text-slate-300 ml-1">
+                      {t('leadForm.fields.company')}
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      className="w-full px-5 py-4 bg-brand-slate-950/50 border-2 border-white/5 rounded-2xl text-white placeholder-slate-600 transition-all focus:outline-none focus:ring-0 focus:border-brand-emerald-500/50"
+                      placeholder={t('leadForm.placeholders.company')}
+                    />
+                  </div>
                 </div>
 
                 {/* Problems */}
-                <div>
-                  <label htmlFor="problems" className="block text-sm font-semibold text-gray-900 mb-3">
+                <div className="space-y-3">
+                  <label htmlFor="problems" className="block text-sm font-bold text-slate-300 ml-1">
                     {t('leadForm.fields.problems')}
                   </label>
                   <textarea
@@ -272,35 +232,8 @@ const LeadCaptureForm = () => {
                     value={formData.problems}
                     onChange={handleInputChange}
                     rows={4}
-                    className={`w-full px-4 py-4 border-2 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 resize-none ${
-                      errors.problems
-                        ? 'border-red-300 focus:border-red-500'
-                        : 'border-gray-200 focus:border-emerald-500'
-                    }`}
+                    className="w-full px-5 py-4 bg-brand-slate-950/50 border-2 border-white/5 rounded-2xl text-white placeholder-slate-600 transition-all focus:outline-none focus:ring-0 focus:border-brand-emerald-500/50 resize-none"
                     placeholder={t('leadForm.placeholders.problems')}
-                    aria-describedby={errors.problems ? 'problems-error' : undefined}
-                  />
-                  {errors.problems && (
-                    <p id="problems-error" className="mt-2 text-sm text-red-600" role="alert">
-                      {errors.problems}
-                    </p>
-                  )}
-                </div>
-
-                {/* Additional Information */}
-                <div>
-                  <label htmlFor="additionalInfo" className="block text-sm font-semibold text-gray-900 mb-3">
-                    {t('leadForm.fields.additionalInfo')}
-                    <span className="text-gray-500 font-normal ml-2">{t('leadForm.fields.optional')}</span>
-                  </label>
-                  <textarea
-                    id="additionalInfo"
-                    name="additionalInfo"
-                    value={formData.additionalInfo}
-                    onChange={handleInputChange}
-                    rows={3}
-                    className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 transition-colors focus:outline-none focus:ring-0 focus:border-emerald-500 resize-none"
-                    placeholder={t('leadForm.placeholders.additionalInfo')}
                   />
                 </div>
 
@@ -308,17 +241,18 @@ const LeadCaptureForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 disabled:from-gray-400 disabled:to-gray-400 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:cursor-not-allowed flex items-center justify-center space-x-3"
+                  className="w-full group relative bg-brand-emerald-500 hover:bg-brand-emerald-400 disabled:bg-slate-800 text-white px-8 py-5 rounded-2xl font-black text-xl transition-all duration-300 shadow-xl shadow-brand-emerald-500/10 flex items-center justify-center space-x-3 overflow-hidden"
                 >
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />
+                      <Loader2 className="w-6 h-6 animate-spin" />
                       <span>{t('leadForm.submitting')}</span>
                     </>
                   ) : (
                     <>
                       <span>{t('leadForm.submitButton')}</span>
-                      <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                      <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
                 </button>
@@ -327,83 +261,65 @@ const LeadCaptureForm = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-            {/* Trust Indicators */}
-            <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{t('leadForm.whyUs.title')}</h3>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-6 h-6 text-emerald-600" />
+          <div className="lg:col-span-4 space-y-8">
+            {/* Why Us */}
+            <div className="bg-brand-slate-900/50 backdrop-blur-xl rounded-[2rem] border border-white/10 p-8 shadow-xl">
+              <h3 className="text-2xl font-black text-white mb-8 tracking-tight">{t('leadForm.whyUs.title')}</h3>
+              <div className="space-y-8">
+                {[
+                  { icon: CheckCircle, title: t('leadForm.whyUs.benefit1.title'), desc: t('leadForm.whyUs.benefit1.description') },
+                  { icon: Shield, title: t('leadForm.whyUs.benefit2.title'), desc: t('leadForm.whyUs.benefit2.description') },
+                  { icon: CheckCircle, title: t('leadForm.whyUs.benefit3.title'), desc: t('leadForm.whyUs.benefit3.description') }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="w-10 h-10 bg-brand-emerald-500/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-brand-emerald-500/20">
+                      <item.icon className="w-5 h-5 text-brand-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold mb-1 tracking-tight">{item.title}</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">{t('leadForm.whyUs.benefit1.title')}</h4>
-                    <p className="text-gray-600 text-sm">{t('leadForm.whyUs.benefit1.description')}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-6 h-6 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">{t('leadForm.whyUs.benefit2.title')}</h4>
-                    <p className="text-gray-600 text-sm">{t('leadForm.whyUs.benefit2.description')}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-6 h-6 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">{t('leadForm.whyUs.benefit3.title')}</h4>
-                    <p className="text-gray-600 text-sm">{t('leadForm.whyUs.benefit3.description')}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            {/* Contact Info */}
-            <div className="bg-gradient-to-br from-emerald-600 to-emerald-500 rounded-3xl shadow-xl p-6 sm:p-8 lg:p-12 text-white">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t('leadForm.contactInfo.title')}</h3>
-              <p className="text-emerald-100 mb-6 leading-relaxed text-sm sm:text-base">
-                {t('leadForm.contactInfo.description')}
-              </p>
-              <div className="flex flex-col gap-3">
-                <a
-                  href="mailto:santiagoromero@getinfinitydata.com"
-                  className="bg-white rounded-2xl p-4 flex items-center space-x-4 hover:shadow-lg transition-shadow duration-200"
-                >
-                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-emerald-600" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-gray-900 font-bold text-sm sm:text-base">{t('contact.email_title')}</p>
-                    <p className="text-emerald-600 text-xs sm:text-sm break-all">{t('contact.email_address')}</p>
-                  </div>
-                </a>
-                <a
-                  href={generateWhatsAppLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white rounded-2xl p-4 flex items-center space-x-4 hover:shadow-lg transition-shadow duration-200"
-                >
-                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MessageCircle className="w-6 h-6 text-emerald-600" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-gray-900 font-bold text-sm sm:text-base">{t('contact.whatsapp_title')}</p>
-                  </div>
-                </a>
+            {/* Direct Contact */}
+            <div className="bg-gradient-to-br from-brand-emerald-600 to-emerald-500 rounded-[2rem] p-8 text-white shadow-xl relative overflow-hidden group">
+              <div className="relative z-10">
+                <h3 className="text-2xl font-black mb-4 tracking-tight">{t('leadForm.contactInfo.title')}</h3>
+                <p className="text-emerald-50/80 mb-8 leading-relaxed font-medium">
+                  {t('leadForm.contactInfo.description')}
+                </p>
+                <div className="space-y-4">
+                  <a
+                    href="mailto:santiagoromero@getinfinitydata.com"
+                    className="flex items-center gap-4 bg-white/10 hover:bg-white/20 p-4 rounded-2xl transition-all border border-white/10 backdrop-blur-sm"
+                  >
+                    <Mail className="w-6 h-6 text-white" />
+                    <span className="font-bold text-sm truncate">{t('contact.email_address')}</span>
+                  </a>
+                  <a
+                    href={generateWhatsAppLink()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 bg-white text-brand-emerald-600 p-4 rounded-2xl transition-all hover:scale-[1.02] shadow-lg"
+                  >
+                    <MessageCircle className="w-6 h-6" />
+                    <span className="font-black text-sm">{t('contact.whatsapp_title')}</span>
+                  </a>
+                </div>
               </div>
+
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
             </div>
           </div>
         </div>
 
         {/* Privacy Notice */}
-        <div className="mt-8 sm:mt-12 text-center px-4">
-          <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto">
+        <div className="mt-20 text-center opacity-50">
+          <p className="text-slate-500 text-sm max-w-2xl mx-auto font-medium">
             {t('leadForm.privacyNotice')}
           </p>
         </div>

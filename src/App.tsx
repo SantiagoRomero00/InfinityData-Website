@@ -10,6 +10,7 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import TrustMarquee from './components/TrustMarquee';
 import Testimonials from './components/Testimonials';
+import InteractiveDemo from './components/InteractiveDemo';
 import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy load the form component for better performance
@@ -58,6 +59,7 @@ const HomePage = () => {
       <ServicesGrid />
       <HowItWorks />
       <Testimonials />
+      <InteractiveDemo />
       <FinalCTA />
       <Footer />
     </>
